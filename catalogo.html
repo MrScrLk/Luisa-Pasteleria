@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo · Pastelería Luisa</title>
+  <meta
+    name="description"
+    content="Catálogo de productos de Pastelería Luisa: pan nubes, tortas, facturas, chipa, scones y más."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-logo">L</div>
+        <div class="brand-text">
+          <div class="brand-text-title">Pastelería Luisa</div>
+          <div class="brand-text-sub">Catálogo de productos</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#especialidad">Pan nubes</a>
+        <a href="index.html#dulce">Dulce</a>
+        <a href="index.html#salico">Salado</a>
+        <a href="#catalogo" class="nav-pill">Catálogo</a>
+        <a href="index.html#contacto">Encargá tu pedido</a>
+      </nav>
+      <button class="cart-mini" type="button" id="open-cart-mini">
+        <div class="cart-mini-icon">🛒</div>
+        <span>Carrito • <span class="cart-mini-count" id="cart-count">0</span> items</span>
+      </button>
+    </header>
+
+    <main>
+      <section id="catalogo" aria-label="Catálogo completo de productos">
+        <div class="cards-section-header catalog-header">
+          <div>
+            <div class="section-label">
+              <span class="section-label-dot"></span>
+              Catálogo
+            </div>
+            <h1 class="section-title">Catálogo completo de productos</h1>
+            <p class="section-subtitle">
+              Acá podés ver todo lo que prepara Luisa: pan nubes, pastelería dulce y salados caseros.
+              Usá los filtros para ver una categoría específica y sumá productos al carrito como referencia.
+            </p>
+          </div>
+          <div class="cards-section-meta catalog-note">
+            Los precios son de referencia. El valor final se confirma siempre por WhatsApp según fecha,
+            cantidad y personalización.
+          </div>
+        </div>
+
+        <div class="catalog-filters" data-filter-container>
+          <button type="button" class="filter-button active" data-filter="todos">Todos</button>
+          <button type="button" class="filter-button" data-filter="pan-nubes">Pan nubes</button>
+          <button type="button" class="filter-button" data-filter="dulce">Dulce</button>
+          <button type="button" class="filter-button" data-filter="salado">Salado</button>
+        </div>
+
+        <div class="cards-grid">
+          <!-- PAN NUBES -->
+          <article class="card catalog-item" data-category="pan-nubes">
+            <div class="card-img-wrapper">
+              <img src="img/pan-nube-1.jpg" alt="Pan nubes clásicos sobre tabla de madera" />
+              <div class="card-pill">Pan nubes</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Pan nubes clásicos</h3>
+              </div>
+              <p class="card-text">
+                Suaves, livianos y esponjosos. Ideales para desayunos y meriendas.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Docena clásica</span>
+                <span class="price">$4.500 (ejemplo)</span>
+              </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Pan nubes clásicos (docena)"
+                data-price="4500"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="card catalog-item" data-category="pan-nubes">
+            <div class="card-img-wrapper">
+              <img src="img/pan-nube-2.jpg" alt="Pan nubes de distintos sabores" />
+              <div class="card-pill">Pan nubes</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Pan nubes sabores</h3>
+              </div>
+              <p class="card-text">
+                Sabores como queso, jamón y queso, provenzal, orégano y semillas.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Docena surtida</span>
+                <span class="price">$4.800 (ejemplo)</span>
+              </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Pan nubes surtidos (docena)"
+                data-price="4800"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- DULCE -->
+          <article class="card catalog-item" data-category="dulce">
+            <div class="card-img-wrapper">
+              <img src="img/torta-1.JPG" alt="Torta de cumpleaños decorada con crema y frutas" />
+              <div class="card-pill">Tortas</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Torta de cumpleaños</h3>
+              </div>
+              <p class="card-text">
+                Bizcochuelos húmedos con rellenos y decoración a elección.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>12 a 20 porciones</span>
+                <span class="price">$18.000 (ejemplo)</span>
+              </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Torta de cumpleaños"
+                data-price="18000"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="card catalog-item" data-category="dulce">
+            <div class="card-img-wrapper">
+              <img src="img/facturas-1.JPG" alt="Medialunas y facturas variadas" />
+              <div class="card-pill">Facturas</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Medialunas y facturas</h3>
+              </div>
+              <p class="card-text">
+                Bandejas de medialunas y facturas variadas para compartir.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Por docena</span>
+                <span class="price">$5.200 (ejemplo)</span>
+              </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Docena de facturas surtidas"
+                data-price="5200"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="card catalog-item" data-category="dulce">
+            <div class="card-img-wrapper">
+              <img src="img/mesa-dulce-1.JPG" alt="Mesa dulce con diferentes postres" />
+              <div class="card-pill">Mesas dulces</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Mesa dulce</h3>
+              </div>
+              <p class="card-text">
+                Mini postres, tartas, shots dulces y más, armados según invitados.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Para eventos</span>
+                <span class="price">$30.000 (ejemplo)</span>
+              </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Mesa dulce básica"
+                data-price="30000"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <!-- SALADO -->
+          <article class="card catalog-item" data-category="salado">
+            <div class="card-img-wrapper">
+              <img src="img/chipa-1.JPG" alt="Chipa misionera casera" />
+              <div class="card-pill">Chipa</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Chipa misionera</h3>
+              </div>
+              <p class="card-text">
+                Suaves por dentro y dorados por fuera, ideales para el mate.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Por docena</span>
+                <span class="price">$4.800 (ejemplo)</span>
+              </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Docena de chipa misionera"
+                data-price="4800"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="card catalog-item" data-category="salado">
+            <div class="card-img-wrapper">
+              <img src="img/scones-1.JPG" alt="Scones salados caseros" />
+              <div class="card-pill">Scones</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Scones salados</h3>
+              </div>
+              <p class="card-text">
+                Opciones saladas que acompañan picadas y meriendas.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Por docena</span>
+                <span class="price">$4.200 (ejemplo)</span>
+              </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Docena de scones salados"
+                data-price="4200"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
+            </div>
+          </article>
+
+          <article class="card catalog-item" data-category="salado">
+            <div class="card-img-wrapper">
+              <img src="img/pan-nube-2.jpg" alt="Bandeja con pan nubes y salados caseros" />
+              <div class="card-pill">Bandejas saladas</div>
+            </div>
+            <div class="card-body">
+              <div class="card-title-row">
+                <h3 class="card-title">Bandeja salada surtida</h3>
+              </div>
+              <p class="card-text">
+                Combos de chipa, pan nubes salados, scones y más.
+              </p>
+              <div class="card-meta-row">
+                <span><span class="card-meta-dot"></span>Para 6 a 8 personas</span>
+                <span class="price">$15.000 (ejemplo)</span>
+              </div>
+              <button
+                class="btn-add"
+                type="button"
+                data-add-to-cart
+                data-name="Bandeja salada surtida"
+                data-price="15000"
+              >
+                <span>+</span> Agregar al carrito
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>&copy; <strong>Pastelería Luisa</strong>. Catálogo completo.</span>
+      <span>Diseño web por su hijo ♥</span>
+    </footer>
+  </div>
+
+  <!-- Panel de carrito (mismo que en index) -->
+  <div class="cart-panel" id="cart-panel" aria-label="Carrito de productos">
+    <div class="cart-panel-header">
+      <div>
+        <div class="cart-panel-title">Tu carrito</div>
+        <small style="font-size:11px; color:var(--muted);">
+          Usalo como referencia antes de escribir por WhatsApp.
+        </small>
+      </div>
+      <button class="cart-panel-close" type="button" id="close-cart">×</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-empty" id="cart-empty">Todavía no agregaste productos.</div>
+    <div class="cart-summary">
+      <span>Total estimado</span>
+      <span class="cart-total" id="cart-total">$0</span>
+    </div>
+    <div class="cart-actions">
+      <button class="btn-cart-secondary" type="button" id="clear-cart">
+        Vaciar carrito
+      </button>
+      <button class="btn-cart-primary" type="button" id="copy-cart">
+        Copiar resumen para WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
