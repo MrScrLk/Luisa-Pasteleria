@@ -964,6 +964,488 @@
       </button>
     </div>
   </div>
+  
+  <!-- MODAL de producto -->
+<div class="product-modal-backdrop" id="product-modal-backdrop">
+  <div class="product-modal" id="product-modal">
+    <button class="product-modal-close" type="button" id="close-product-modal">×</button>
+    <div id="product-modal-content"></div>
+  </div>
+</div>
+
+<!-- DETALLES OCULTOS (plantillas) -->
+<div class="product-details" aria-hidden="true">
+  <div id="detalle-pan-nubes-clasicos">
+  <h2 class="section-title">Pan nubes clásicos</h2>
+  <p class="section-subtitle">
+    Los pan nubes de siempre: suaves, livianos y esponjosos. Ideales para el mate, el café o el desayuno.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se pueden congelar y regenerar unos minutos en horno o airfryer. Perfectos para bandejas de desayuno y
+    meriendas familiares.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/pan-nube-1.jpg" alt="Pan nubes clásicos recién horneados" />
+      <figcaption>Pan nubes recién salidos del horno.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/pan-nube-2.jpg" alt="Pan nubes clásicos acomodados en bandeja" />
+      <figcaption>Presentación clásica para compartir.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-pan-nubes-surtidos">
+  <h2 class="section-title">Pan nubes surtidos</h2>
+  <p class="section-subtitle">
+    Bandejas con combinación de nubes dulces y salados: clásicos, especiados, con semillas y más.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideales para eventos, mesas de brunch y reuniones grandes. Se pueden armar bandejas a medida con las
+    variedades que más te gusten.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/hero-pan-nubes.JPG" alt="Bandeja de pan nubes surtidos" />
+      <figcaption>Bandeja surtida con distintas variedades de nubes.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-simple-1.jpeg" alt="Detalle de varios tipos de nubes" />
+      <figcaption>Combinación de nubes simples, dulces y salados.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-cacao">
+  <h2 class="section-title">Nubes dulces sabor cacao</h2>
+  <p class="section-subtitle">
+    Pan nubes con cacao, una opción dulce pero liviana, perfecta para acompañar el café.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se pueden combinar con otras variedades dulces (coco, naranja, simples). Consultá por opciones sin
+    azúcar refinada.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Nubes-Cacao-dulces-1.jpeg" alt="Nubes de cacao en bandeja" />
+      <figcaption>Presentación en bandeja para mesa dulce.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-Cacao-dulces-2.jpeg" alt="Detalle de nubes de cacao" />
+      <figcaption>Textura suave y esponjosa por dentro.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-Cacao-dulces-3.jpeg" alt="Nubes de cacao acomodadas en fuente" />
+      <figcaption>Listas para servir en eventos.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-coco">
+  <h2 class="section-title">Nubes dulces sabor coco</h2>
+  <p class="section-subtitle">
+    Nubes dulces con coco rallado, aromáticos y suaves, ideales para mate, café o meriendas.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se pueden combinar con otras variedades dulces o armar bandejas solo de coco para quienes aman ese sabor.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Nubes-coco-1.jpeg" alt="Nubes de coco en bandeja" />
+      <figcaption>Presentación en bandeja de nubes sabor coco.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-coco-2.jpeg" alt="Detalle cercano de nubes de coco" />
+      <figcaption>Detalle de textura y color.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-coco-3.jpeg" alt="Nubes de coco acomodadas para servir" />
+      <figcaption>Listas para servir en reuniones.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-naranja">
+  <h2 class="section-title">Nubes dulces sabor naranja</h2>
+  <p class="section-subtitle">
+    Nubes con aroma cítrico a naranja, livianos y frescos, ideales para acompañar un té o un café.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Podés combinarlos con nubes simples o de coco para armar una bandeja variada.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Nubes-naranja-1.jpeg" alt="Nubes sabor naranja en bandeja" />
+      <figcaption>Presentación en bandeja de nubes de naranja.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-naranja-2.jpeg" alt="Detalle cercano de nubes de naranja" />
+      <figcaption>Color y textura de la masa saborizada.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-semillas">
+  <h2 class="section-title">Nubes con semillas</h2>
+  <p class="section-subtitle">
+    Pan nubes con mezcla de semillas, una opción distinta y más rústica.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideales para quienes buscan algo diferente dentro de las opciones de pan nubes. Se pueden combinar con
+    nubes simples y especiados en una misma bandeja.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Nubes-semillas-1.jpeg" alt="Nubes con semillas" />
+      <figcaption>Nubes con semillas listas para servir.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-semillas-2.jpeg" alt="Detalle de nubes con semillas" />
+      <figcaption>Textura y superficie con mezcla de semillas.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-semillas-3.jpeg" alt="Nubes con semillas en bandeja" />
+      <figcaption>Presentación en bandeja para compartir.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-harina-almendra">
+  <h2 class="section-title">Nubes con harina de almendra</h2>
+  <p class="section-subtitle">
+    Nubes hechos con harina de almendra, una variante diferente para quienes buscan otras harinas.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Consultá por opciones combinadas con otras variedades o por bandejas especiales para personas con
+    ciertos cuidados en la alimentación.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/nubes-harina-almendra-1.jpeg" alt="Nubes con harina de almendra" />
+      <figcaption>Presentación en bandeja de nubes con harina de almendra.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/nubes-harina-almendra-2.jpeg" alt="Detalle de textura con harina de almendra" />
+      <figcaption>Detalle de la miga y la textura.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-simples">
+  <h2 class="section-title">Nubes simples</h2>
+  <p class="section-subtitle">
+    La base de todas las variantes de pan nubes. Textura suave y liviana, con sabor neutro.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Podés usarlos para armar sándwiches, acompañar el mate o combinarlos con variedades dulces en una
+    misma bandeja.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Nubes-simple-1.jpeg" alt="Nubes simples en bandeja" />
+      <figcaption>Nubes simples acomodados para servir.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-simple-2.jpeg" alt="Detalle de nubes simples" />
+      <figcaption>Textura esponjosa y suave.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-pata">
+  <h2 class="section-title">Nubes para pata y picadas</h2>
+  <p class="section-subtitle">
+    Nubes pensados para acompañar pata, fiambres y picadas. Ligeros pero con sabor, para complementar la mesa.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se arman bandejas grandes para eventos, con la cantidad que necesites. Consultá por tamaños y combinaciones.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Nubes-Pata-1.jpeg" alt="Nubes para pata en fuente" />
+      <figcaption>Bandeja de nubes para acompañar pata y fiambres.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-Pata-2.jpeg" alt="Detalle de nubes para pata" />
+      <figcaption>Distintas formas y tamaños según el uso.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-lomo">
+  <h2 class="section-title">Nubes lomo</h2>
+  <p class="section-subtitle">
+    Nubes pensados para armar sándwiches de lomo u otros rellenos, suaves pero firmes para sostener el relleno.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideales para eventos donde se sirven sándwiches calientes o fríos. Se arman bandejas según cantidad
+    de invitados.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Nubes-lomo-1.jpeg" alt="Nubes lomo en bandeja" />
+      <figcaption>Bandeja de nubes lomo listos para rellenar.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-lomo-2.jpeg" alt="Detalle de nubes lomo" />
+      <figcaption>Textura y forma adaptadas para sándwiches.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-nubes-especiados">
+  <h2 class="section-title">Nubes especiados</h2>
+  <p class="section-subtitle">
+    Nubes saborizados con orégano, queso y sabores tipo pizza. Una opción distinta dentro de las bandejas saladas.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Funcionan muy bien en picadas y mesas saladas. Se pueden combinar con chipa, scones y otras variedades
+    de nubes.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Nubes-especiados-1.jpeg" alt="Nubes especiados en bandeja" />
+      <figcaption>Presentación de nubes especiados listos para servir.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Nubes-especiados-2.jpeg" alt="Detalle de nubes especiados" />
+      <figcaption>Textura y dorado de los nubes especiados.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-budines-saludables">
+  <h2 class="section-title">Budines saludables</h2>
+  <p class="section-subtitle">
+    Budines sin harina de trigo y sin azúcar refinada, hechos con harinas alternativas como almendra o nuez.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideales para quienes cuidan lo que comen, pero no quieren dejar de disfrutar algo rico. Consultá por
+    sabores disponibles y tamaño de los budines.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/budines-saludables-1.jpeg" alt="Budines saludables" />
+      <figcaption>Budines en diferentes tamaños y presentaciones.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/budines-saludables-2.jpeg" alt="Detalle de budín saludable" />
+      <figcaption>Textura húmeda y suave sin usar harina de trigo.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-cheesecake">
+  <h2 class="section-title">Cheesecake</h2>
+  <p class="section-subtitle">
+    Cheesecake cremoso con base de galletas. Se puede combinar con diferentes toppings: frutos rojos,
+    dulce de leche, ganache, etc.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideal para celebraciones, reuniones o como postre especial. Consultá por sabores y tamaño según
+    cantidad de personas.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Cheesecake-1.jpeg" alt="Cheesecake decorado" />
+      <figcaption>Cheesecake casero con cobertura decorada.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-tarta-frutillas">
+  <h2 class="section-title">Tarta de frutillas</h2>
+  <p class="section-subtitle">
+    Base crocante, crema suave y frutillas frescas. Un clásico que nunca falla.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideal para postres, meriendas y celebraciones. Se puede adaptar el tamaño según la cantidad de
+    personas.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Tarta-frutillas-1.jpeg" alt="Tarta de frutillas" />
+      <figcaption>Tarta de frutillas completa.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Tarta-frutillas-2.jpeg" alt="Detalle de tarta de frutillas" />
+      <figcaption>Detalle de la fruta fresca y la crema.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-tarta-peras-almendras">
+  <h2 class="section-title">Tarta de peras y almendras</h2>
+  <p class="section-subtitle">
+    Tarta rústica con peras frescas y crema de almendras, para quienes prefieren postres menos dulces
+    pero muy sabrosos.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideal para meriendas especiales o como postre diferente. Consultá por tamaños y presentación.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/tarta-peras-almendras-1.jpeg" alt="Tarta de peras y almendras" />
+      <figcaption>Presentación de tarta de peras y almendras.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-torta-harina-nuez">
+  <h2 class="section-title">Torta con harina de nuez</h2>
+  <p class="section-subtitle">
+    Bizcocho húmedo con harina de nuez, sabor intenso y muy aromático, ideal para amantes de los frutos secos.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se puede cubrir con crema, ganache o simplemente azúcar impalpable, según el estilo de la celebración.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/torta-harina-nuez-1.jpeg" alt="Torta de harina de nuez" />
+      <figcaption>Torta con harina de nuez completa.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/torta-harina-nuez-2.jpeg" alt="Detalle de torta de nuez" />
+      <figcaption>Detalle de la miga y cobertura.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-torta-selvanegra">
+  <h2 class="section-title">Torta selvanegra</h2>
+  <p class="section-subtitle">
+    Versión casera de la clásica selvanegra, con capas de bizcochuelo, crema y frutas.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideal para cumpleaños, aniversarios y ocasiones especiales. Consultá por sabores y decoración.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Torta-selvanegra-1.jpeg" alt="Torta selvanegra" />
+      <figcaption>Presentación de torta selvanegra.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-torta-cumple">
+  <h2 class="section-title">Torta de cumpleaños personalizada</h2>
+  <p class="section-subtitle">
+    Tortas decoradas a pedido: sabores, rellenos, colores y estilo adaptados a cada persona.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se pueden hacer diseños simples o más elaborados. Siempre con bizcochuelos húmedos y rellenos elegidos
+    por quien encarga.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/torta-1.JPG" alt="Torta de cumpleaños decorada" />
+      <figcaption>Ejemplo de torta de cumpleaños decorada.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-facturas">
+  <h2 class="section-title">Medialunas y facturas</h2>
+  <p class="section-subtitle">
+    Bandejas de facturas caseras y medialunas suaves. Ideales para desayunos, meriendas o mesas de café.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se pueden armar bandejas surtidas según la cantidad de personas. Consultá por variedades disponibles.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/facturas-1.JPG" alt="Facturas surtidas" />
+      <figcaption>Ejemplo de bandeja de facturas y medialunas.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-mesa-dulce">
+  <h2 class="section-title">Mesa dulce para eventos</h2>
+  <p class="section-subtitle">
+    Mesas dulces armadas a medida según cantidad de invitados y tipo de evento.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Incluyen mini postres, tartas pequeñas, shots dulces y otras preparaciones. Se coordina todo por WhatsApp
+    según gustos, presupuesto y cantidad de personas.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/mesa-dulce-1.JPG" alt="Mesa dulce con distintos postres" />
+      <figcaption>Ejemplo de mesa dulce armada para un evento.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-pepas-scones">
+  <h2 class="section-title">Pepas y scones</h2>
+  <p class="section-subtitle">
+    Pepas caseras y scones para acompañar desayunos, meriendas o mesas de café.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se pueden armar bandejas surtidas y combinar con otras opciones dulces como budines o tartas.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Pepas-scones-1.jpeg" alt="Pepas y scones en bandeja" />
+      <figcaption>Bandeja de pepas y scones caseros.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-chipa">
+  <h2 class="section-title">Chipa misionera</h2>
+  <p class="section-subtitle">
+    Chipa casera estilo misionero, con mucho queso y textura suave. Ideal para el mate y las picadas.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se vende por docena, y se pueden combinar con bandejas de nubes salados o scones para mesas más grandes.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/chipa-1.JPG" alt="Chipa misionera" />
+      <figcaption>Chipa misionera recién horneada.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-focaccias">
+  <h2 class="section-title">Focaccias caseras</h2>
+  <p class="section-subtitle">
+    Focaccias esponjosas con aceite de oliva, hierbas y diferentes toppings salados.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Ideales para picadas, mesas saladas o para usar como base de sandwiches. Se venden en bandejas.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/Focaccias-1.jpeg" alt="Focaccias caseras" />
+      <figcaption>Focaccias en bandeja listas para servir.</figcaption>
+    </figure>
+    <figure>
+      <img src="img/Focaccias-2.jpeg" alt="Detalle de focaccias" />
+      <figcaption>Detalle de corte y miga.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<div id="detalle-scones-salados">
+  <h2 class="section-title">Scones salados</h2>
+  <p class="section-subtitle">
+    Scones salados que acompañan muy bien picadas, sopas y meriendas diferentes.
+  </p>
+  <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
+    Se pueden combinar en bandejas con chipa y nubes salados. Consultá por cantidad mínima y combinaciones.
+  </p>
+  <div class="product-gallery">
+    <figure>
+      <img src="img/scones-1.JPG" alt="Scones salados caseros" />
+      <figcaption>Scones salados listos para servir.</figcaption>
+    </figure>
+  </div>
+</div>
+</div>
 
   <script src="js/main.js"></script>
 </body>
