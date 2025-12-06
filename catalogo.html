@@ -6,926 +6,616 @@
   <title>Catálogo · Luisa Pastelería</title>
   <meta
     name="description"
-    content="Catálogo de productos de Luisa Pastelería: pan nubes, tortas, facturas, chipa, scones y más."
+    content="Catálogo completo de Luisa Pastelería: pan nubes, budines saludables, tortas, tartas, chipa, focaccias, scones y más."
   />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
+<body data-whatsapp-number="549351000000">
+  <!-- CAMBIAR MI NÚMERO ACÁ DESPUÉS -->
 
-<body>
-  <div class="page">
-    <header class="header">
-      <div class="brand">
-        <div class="brand-logo">L</div>
-        <div class="brand-text">
-          <div class="brand-text-title">Luisa Pastelería</div>
-          <div class="brand-text-sub">Catálogo de productos</div>
-        </div>
+  <div class="site">
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="index.html" class="brand">
+          <div class="brand-logo">L</div>
+          <div class="brand-text">
+            <span class="brand-title">Luisa Pastelería</span>
+            <span class="brand-sub">Catálogo de productos</span>
+          </div>
+        </a>
+
+        <nav class="nav">
+          <a href="index.html">Inicio</a>
+          <a href="index.html#especialidad">Pan nubes</a>
+          <a href="index.html#dulce">Dulce</a>
+          <a href="index.html#salado">Salado</a>
+          <a href="#catalogo" class="nav-pill">Catálogo</a>
+        </nav>
       </div>
-
-      <nav class="nav">
-        <a href="index.html">Inicio</a>
-        <a href="index.html#especialidad">Pan nubes</a>
-        <a href="index.html#dulce">Dulce</a>
-        <a href="index.html#salado">Salado</a>
-        <a href="#catalogo" class="nav-pill">Catálogo</a>
-        <a href="index.html#contacto">Encargá tu pedido</a>
-      </nav>
-
-      <button class="cart-mini" type="button" id="open-cart-mini">
-        <div class="cart-mini-icon">🛒</div>
-        <span>Carrito • <span class="cart-mini-count" id="cart-count">0</span> items</span>
-      </button>
     </header>
 
-    <main>
-      <section id="catalogo" aria-label="Catálogo completo de productos">
-        <div class="cards-section-header catalog-header">
-          <div>
-            <div class="section-label">
-              <span class="section-label-dot"></span>
-              Catálogo
-            </div>
-            <h1 class="section-title">Catálogo completo de productos</h1>
-            <p class="section-subtitle">
-              Acá podrás ver todo lo que preparo: pan nubes, pastelería dulce y salados caseros.
-              Usá los filtros para ver una categoría específica y sumá productos al carrito como referencia.
-            </p>
-          </div>
-          <div class="cards-section-meta catalog-note">
-            Los precios son de referencia. El valor final se confirma siempre por WhatsApp según fecha,
-            cantidad y personalización.
-          </div>
+    <main id="catalogo">
+      <section class="catalog-hero">
+        <div>
+          <p class="section-chip">Catálogo completo</p>
+          <h1>Elegí tus productos y mirá más fotos</h1>
+          <p>
+            Usá los filtros para ver solo pan nubes, dulce o salado. En cada tarjeta podés
+            abrir una galería de fotos y, si querés, ir directo a WhatsApp con el producto ya
+            escrito.
+          </p>
+          <p class="catalog-note">
+            Los precios que aparecen son <strong>de referencia</strong>. El valor final se
+            coordina siempre por WhatsApp según fecha, cantidad y personalización.
+          </p>
         </div>
+      </section>
 
+      <!-- FILTROS -->
+      <section class="section">
         <div class="catalog-filters" data-filter-container>
           <button type="button" class="filter-button active" data-filter="todos">Todos</button>
           <button type="button" class="filter-button" data-filter="pan-nubes">Pan nubes</button>
-          <button type="button" class="filter-button" data-filter="dulce">Dulce</button>
-          <button type="button" class="filter-button" data-filter="salado">Salado</button>
+          <button type="button" class="filter-button" data-filter="dulce" id="dulce">Dulce</button>
+          <button type="button" class="filter-button" data-filter="salado" id="salado">Salado</button>
         </div>
 
+        <!-- GRID DE PRODUCTOS -->
         <div class="cards-grid">
-          <!-- PAN NUBES CLÁSICOS -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/pan-nube-1.jpg" alt="Pan nubes clásicos" />
-              <div class="card-pill">Pan nubes</div>
+
+          <!-- PAN NUBES -->
+          <article class="product-card" data-category="pan-nubes" id="pan-nubes">
+            <div class="product-image">
+              <img src="img/pan-nube-1.jpg" alt="Pan nubes clásicos" loading="lazy" />
+              <span class="product-pill">Pan nubes</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Pan nubes clásicos</h3>
+            <div class="product-body">
+              <h3>Pan nubes clásicos</h3>
+              <p>Los de siempre: suaves, livianos y esponjosos. Ideales para el mate y el café.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$4.500 (referencia)</span>
               </div>
-              <p class="card-text">
-                Pan nubes suaves y esponjosos, los clásicos de todos los días. Ideales para el mate, el café o el desayuno.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Docena clásica</span>
-                <span class="price">$4.500 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="pan-nube-clasico">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Pan nubes clásicos (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Pan nubes clásicos (docena)"
-                data-price="4500"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="pan-nubes-clasicos"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- PAN NUBES SABORES VARIOS (foto hero) -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/hero-pan-nubes.JPG" alt="Pan nubes surtidos de varios sabores" />
-              <div class="card-pill">Pan nubes</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/hero-pan-nubes.JPG" alt="Pan nubes surtidos" loading="lazy" />
+              <span class="product-pill">Pan nubes</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Pan nubes surtidos</h3>
+            <div class="product-body">
+              <h3>Pan nubes surtidos</h3>
+              <p>Bandejas con mezcla de nubes dulces y salados para compartir.</p>
+              <div class="product-meta">
+                <span>Bandeja grande</span>
+                <span class="price">$6.800 (referencia)</span>
               </div>
-              <p class="card-text">
-                Combinaciones de nubes clásicos, dulces y salados en una misma bandeja. Perfectos para compartir.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Bandeja surtida</span>
-                <span class="price">$6.800 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="pan-nube-surtido">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Pan nubes surtidos (bandeja)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Pan nubes surtidos (bandeja)"
-                data-price="6800"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="pan-nubes-surtidos"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES DULCES CACAO -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/Nubes-Cacao-dulces-1.jpeg" alt="Nubes dulces sabor cacao" />
-              <div class="card-pill">Pan nubes dulces</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/Nubes-Cacao-dulces-1.jpeg" alt="Nubes dulces cacao" loading="lazy" />
+              <span class="product-pill">Pan nubes dulces</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes dulces sabor cacao</h3>
+            <div class="product-body">
+              <h3>Nubes dulces sabor cacao</h3>
+              <p>Versión dulce con cacao, livianos y suaves para acompañar el café.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$4.900 (referencia)</span>
               </div>
-              <p class="card-text">
-                Versión dulce de los pan nubes, con cacao. Livianos, suaves y perfectos para acompañar el café.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Docena dulce</span>
-                <span class="price">$4.900 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-cacao">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes dulces sabor cacao (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes dulces sabor cacao (docena)"
-                data-price="4900"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-cacao"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES DULCES COCO -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/Nubes-coco-1.jpeg" alt="Nubes dulces sabor coco" />
-              <div class="card-pill">Pan nubes dulces</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/Nubes-coco-1.jpeg" alt="Nubes dulces coco" loading="lazy" />
+              <span class="product-pill">Pan nubes dulces</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes dulces sabor coco</h3>
+            <div class="product-body">
+              <h3>Nubes dulces sabor coco</h3>
+              <p>Nubes con coco rallado, muy aromáticos y livianos.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$4.900 (referencia)</span>
               </div>
-              <p class="card-text">
-                Pan nubes con un toque de coco rallado, aromáticos y suaves, ideales como snack dulce liviano.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Docena dulce</span>
-                <span class="price">$4.900 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-coco">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes dulces sabor coco (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes dulces sabor coco (docena)"
-                data-price="4900"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-coco"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES DULCES NARANJA -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/Nubes-naranja-1.jpeg" alt="Nubes dulces sabor naranja" />
-              <div class="card-pill">Pan nubes dulces</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/Nubes-naranja-1.jpeg" alt="Nubes dulces naranja" loading="lazy" />
+              <span class="product-pill">Pan nubes dulces</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes dulces sabor naranja</h3>
+            <div class="product-body">
+              <h3>Nubes dulces sabor naranja</h3>
+              <p>Nubes con aroma cítrico a naranja, frescos y suaves.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$4.900 (referencia)</span>
               </div>
-              <p class="card-text">
-                Nubes con aroma cítrico a naranja, frescos y muy suaves para cualquier momento del día.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Docena dulce</span>
-                <span class="price">$4.900 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-naranja">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes dulces sabor naranja (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes dulces sabor naranja (docena)"
-                data-price="4900"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-naranja"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES CON SEMILLAS -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/Nubes-semillas-1.jpeg" alt="Pan nubes con semillas" />
-              <div class="card-pill">Pan nubes especiales</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/Nubes-semillas-1.jpeg" alt="Nubes con semillas" loading="lazy" />
+              <span class="product-pill">Pan nubes especiales</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes con semillas</h3>
+            <div class="product-body">
+              <h3>Nubes con semillas</h3>
+              <p>Con mezcla de semillas, una opción distinta y más rústica.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$5.200 (referencia)</span>
               </div>
-              <p class="card-text">
-                Pan nubes con mezcla de semillas, una opción diferente para quienes buscan algo más nutritivo.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Docena especial</span>
-                <span class="price">$5.200 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-semillas">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes con semillas (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes con semillas (docena)"
-                data-price="5200"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-semillas"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES CON HARINA DE ALMENDRA -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/nubes-harina-almendra-1.jpeg" alt="Nubes con harina de almendra" />
-              <div class="card-pill">Pan nubes almendra</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/nubes-harina-almendra-1.jpeg" alt="Nubes con harina de almendra" loading="lazy" />
+              <span class="product-pill">Pan nubes almendra</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes con harina de almendra</h3>
+            <div class="product-body">
+              <h3>Nubes con harina de almendra</h3>
+              <p>Hechos con harina de almendra, ideales para quienes buscan otras harinas.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$5.800 (referencia)</span>
               </div>
-              <p class="card-text">
-                Hechos con harina de almendra, ideales para quienes buscan opciones diferentes o con harinas alternativas.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Docena almendra</span>
-                <span class="price">$5.800 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-almendra">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes con harina de almendra (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes con harina de almendra (docena)"
-                data-price="5800"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-harina-almendra"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES SIMPLES -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/Nubes-simple-1.jpeg" alt="Nubes simples" />
-              <div class="card-pill">Pan nubes</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/Nubes-simple-1.jpeg" alt="Nubes simples" loading="lazy" />
+              <span class="product-pill">Pan nubes</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes simples</h3>
+            <div class="product-body">
+              <h3>Nubes simples</h3>
+              <p>La base de todas las variantes, suaves y neutros.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$4.300 (referencia)</span>
               </div>
-              <p class="card-text">
-                La base de todas las recetas de nubes: suaves, neutros y versátiles para combinar con dulce o salado.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Docena simple</span>
-                <span class="price">$4.300 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-simples">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes simples (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes simples (docena)"
-                data-price="4300"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-simples"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES PATA -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/Nubes-Pata-1.jpeg" alt="Nubes especiados para pata y fiambres" />
-              <div class="card-pill">Pan nubes salados</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/Nubes-Pata-1.jpeg" alt="Nubes para pata y picadas" loading="lazy" />
+              <span class="product-pill">Pan nubes salados</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes para pata y picadas</h3>
+            <div class="product-body">
+              <h3>Nubes para pata y picadas</h3>
+              <p>Especiados para acompañar pata, fiambres y picadas.</p>
+              <div class="product-meta">
+                <span>Bandeja grande</span>
+                <span class="price">$7.500 (referencia)</span>
               </div>
-              <p class="card-text">
-                Nubes especiados para acompañar pata, fiambres y picadas. Ideales para eventos y reuniones grandes.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Bandeja para compartir</span>
-                <span class="price">$7.500 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-pata">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes para pata y picadas (bandeja)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes para pata (bandeja)"
-                data-price="7500"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-pata"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES LOMO -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/Nubes-lomo-1.jpeg" alt="Nubes tipo sandwich de lomo" />
-              <div class="card-pill">Pan nubes rellenos</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/Nubes-lomo-1.jpeg" alt="Nubes lomo" loading="lazy" />
+              <span class="product-pill">Pan nubes rellenos</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes lomo</h3>
+            <div class="product-body">
+              <h3>Nubes lomo</h3>
+              <p>Para armar sándwiches de lomo u otros rellenos.</p>
+              <div class="product-meta">
+                <span>Bandeja salada</span>
+                <span class="price">$8.200 (referencia)</span>
               </div>
-              <p class="card-text">
-                Pan nubes pensados para sándwiches de lomo u otros rellenos. Suaves pero firmes, perfectos para eventos.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Bandeja salada</span>
-                <span class="price">$8.200 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-lomo">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes lomo (bandeja)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes lomo (bandeja)"
-                data-price="8200"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-lomo"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- NUBES ESPECIADOS -->
-          <article class="card catalog-item" data-category="pan-nubes">
-            <div class="card-img-wrapper">
-              <img src="img/Nubes-especiados-1.jpeg" alt="Nubes especiados sabores orégano, queso, pizza" />
-              <div class="card-pill">Pan nubes especiados</div>
+          <article class="product-card" data-category="pan-nubes">
+            <div class="product-image">
+              <img src="img/Nubes-especiados-1.jpeg" alt="Nubes especiados" loading="lazy" />
+              <span class="product-pill">Pan nubes especiados</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Nubes especiados</h3>
+            <div class="product-body">
+              <h3>Nubes especiados</h3>
+              <p>Nubes saborizados (orégano, queso, sabores tipo pizza).</p>
+              <div class="product-meta">
+                <span>Bandeja salada</span>
+                <span class="price">$7.900 (referencia)</span>
               </div>
-              <p class="card-text">
-                Nubes saborizados (orégano, queso, sabores tipo pizza). Geniales para picadas y mesas saladas.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Bandeja salada</span>
-                <span class="price">$7.900 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="nubes-especiados">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Nubes especiados (bandeja)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Nubes especiados (bandeja)"
-                data-price="7900"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="nubes-especiados"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- BUDINES SALUDABLES -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/budines-saludables-1.jpeg" alt="Budines saludables sin harina y sin azúcar" />
-              <div class="card-pill">Budines saludables</div>
+          <!-- DULCE -->
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/budines-saludables-1.jpeg" alt="Budines saludables" loading="lazy" />
+              <span class="product-pill">Budines saludables</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Budines sin harina y sin azúcar</h3>
+            <div class="product-body">
+              <h3>Budines sin harina y sin azúcar</h3>
+              <p>Hechos con harinas alternativas (almendra, nuez) y sin azúcar refinada.</p>
+              <div class="product-meta">
+                <span>Por unidad</span>
+                <span class="price">$3.800 (referencia)</span>
               </div>
-              <p class="card-text">
-                Budines hechos con harinas alternativas (almendra, nuez) y sin azúcar refinada. Una opción más liviana.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Por unidad</span>
-                <span class="price">$3.800 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="budines-saludables">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Budines saludables">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Budín saludable (unidad)"
-                data-price="3800"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="budines-saludables"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- CHEESECAKE -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/Cheesecake-1.jpeg" alt="Cheesecake casero" />
-              <div class="card-pill">Tortas y postres</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/Cheesecake-1.jpeg" alt="Cheesecake casero" loading="lazy" />
+              <span class="product-pill">Tortas y postres</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Cheesecake</h3>
+            <div class="product-body">
+              <h3>Cheesecake</h3>
+              <p>Cremoso, con base de galletas y distintas opciones de cobertura.</p>
+              <div class="product-meta">
+                <span>8 a 12 porciones</span>
+                <span class="price">$15.000 (referencia)</span>
               </div>
-              <p class="card-text">
-                Cheesecake cremoso, con base de galletas y distintas opciones de cobertura (frutos rojos, dulce de leche, etc.).
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>8 a 12 porciones</span>
-                <span class="price">$15.000 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="cheesecake">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Cheesecake">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Cheesecake"
-                data-price="15000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="cheesecake"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- TARTA DE FRUTILLA -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/Tarta-frutillas-1.jpeg" alt="Tarta de frutillas" />
-              <div class="card-pill">Tartas dulces</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/Tarta-frutillas-1.jpeg" alt="Tarta de frutillas" loading="lazy" />
+              <span class="product-pill">Tartas dulces</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Tarta de frutillas</h3>
+            <div class="product-body">
+              <h3>Tarta de frutillas</h3>
+              <p>Base crocante, crema suave y frutillas frescas.</p>
+              <div class="product-meta">
+                <span>8 a 10 porciones</span>
+                <span class="price">$14.000 (referencia)</span>
               </div>
-              <p class="card-text">
-                Base crocante, crema suave y frutillas frescas. Un clásico de pastelería casera.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>8 a 10 porciones</span>
-                <span class="price">$14.000 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="tarta-frutillas">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Tarta de frutillas">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Tarta de frutillas"
-                data-price="14000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="tarta-frutillas"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- TARTA PERAS Y ALMENDRAS -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/tarta-peras-almendras-1.jpeg" alt="Tarta de peras y almendras" />
-              <div class="card-pill">Tartas dulces</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/tarta-peras-almendras-1.jpeg" alt="Tarta de peras y almendras" loading="lazy" />
+              <span class="product-pill">Tartas dulces</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Tarta de peras y almendras</h3>
+            <div class="product-body">
+              <h3>Tarta de peras y almendras</h3>
+              <p>Peras frescas y crema de almendras, ideal para una merienda especial.</p>
+              <div class="product-meta">
+                <span>8 a 10 porciones</span>
+                <span class="price">$15.000 (referencia)</span>
               </div>
-              <p class="card-text">
-                Tarta rústica con peras frescas y crema de almendras, ideal para una merienda especial.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>8 a 10 porciones</span>
-                <span class="price">$15.000 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="tarta-peras-almendras">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Tarta de peras y almendras">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Tarta de peras y almendras"
-                data-price="15000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="tarta-peras-almendras"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- TORTA HARINA DE NUEZ -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/torta-harina-nuez-1.jpeg" alt="Torta con harina de nuez" />
-              <div class="card-pill">Tortas especiales</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/torta-harina-nuez-1.jpeg" alt="Torta con harina de nuez" loading="lazy" />
+              <span class="product-pill">Tortas especiales</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Torta con harina de nuez</h3>
+            <div class="product-body">
+              <h3>Torta con harina de nuez</h3>
+              <p>Bizcocho húmedo con harina de nuez, sabor intenso y aromático.</p>
+              <div class="product-meta">
+                <span>10 a 12 porciones</span>
+                <span class="price">$18.000 (referencia)</span>
               </div>
-              <p class="card-text">
-                Bizcocho húmedo con harina de nuez, ideal para quienes aman los frutos secos y sabores intensos.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>10 a 12 porciones</span>
-                <span class="price">$18.000 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="torta-harina-nuez">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Torta con harina de nuez">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Torta con harina de nuez"
-                data-price="18000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="torta-harina-nuez"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- TORTA SELVANEGRA -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/Torta-selvanegra-1.jpeg" alt="Torta selvanegra" />
-              <div class="card-pill">Tortas</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/Torta-selvanegra-1.jpeg" alt="Torta selvanegra" loading="lazy" />
+              <span class="product-pill">Tortas</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Torta selvanegra</h3>
+            <div class="product-body">
+              <h3>Torta selvanegra</h3>
+              <p>Versión casera de la clásica selvanegra, con capas de bizcochuelo, crema y frutas.</p>
+              <div class="product-meta">
+                <span>10 a 12 porciones</span>
+                <span class="price">$19.000 (referencia)</span>
               </div>
-              <p class="card-text">
-                Versión casera de la clásica selvanegra, con capas de bizcochuelo, crema y frutas.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>10 a 12 porciones</span>
-                <span class="price">$19.000 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="torta-selvanegra">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Torta selvanegra">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Torta selvanegra"
-                data-price="19000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="torta-selvanegra"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- TORTA CUMPLEAÑOS -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/torta-1.JPG" alt="Torta de cumpleaños decorada" />
-              <div class="card-pill">Tortas personalizadas</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/torta-1.JPG" alt="Torta de cumpleaños" loading="lazy" />
+              <span class="product-pill">Tortas personalizadas</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Torta de cumpleaños</h3>
+            <div class="product-body">
+              <h3>Torta de cumpleaños</h3>
+              <p>Sabores, rellenos y decoración adaptados a cada persona.</p>
+              <div class="product-meta">
+                <span>12 a 20 porciones</span>
+                <span class="price">$20.000 (referencia)</span>
               </div>
-              <p class="card-text">
-                Tortas decoradas a pedido: sabores, rellenos y decoración adaptados a la ocasión y a la persona.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>12 a 20 porciones</span>
-                <span class="price">$20.000 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="torta-cumple">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Torta de cumpleaños personalizada">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Torta de cumpleaños"
-                data-price="20000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="torta-cumple"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- FACTURAS -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/facturas-1.JPG" alt="Facturas y medialunas" />
-              <div class="card-pill">Facturas</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/facturas-1.JPG" alt="Medialunas y facturas" loading="lazy" />
+              <span class="product-pill">Facturas</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Medialunas y facturas</h3>
+            <div class="product-body">
+              <h3>Medialunas y facturas</h3>
+              <p>Bandejas surtidas ideales para desayunos o reuniones.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$5.200 (referencia)</span>
               </div>
-              <p class="card-text">
-                Bandejas de medialunas y facturas surtidas, ideales para desayunos empresariales o reuniones.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Por docena</span>
-                <span class="price">$5.200 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="facturas">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Medialunas y facturas (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Docena de facturas surtidas"
-                data-price="5200"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="facturas"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- MESA DULCE -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/mesa-dulce-1.JPG" alt="Mesa dulce" />
-              <div class="card-pill">Mesa dulce</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/mesa-dulce-1.JPG" alt="Mesa dulce para eventos" loading="lazy" />
+              <span class="product-pill">Mesa dulce</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Mesa dulce para eventos</h3>
+            <div class="product-body">
+              <h3>Mesa dulce para eventos</h3>
+              <p>Mini postres, tartas pequeñas, shots dulces y más, según cantidad de personas.</p>
+              <div class="product-meta">
+                <span>Desde 15 personas</span>
+                <span class="price">$30.000 (referencia)</span>
               </div>
-              <p class="card-text">
-                Mesa dulce armada a medida: mini postres, tartas, shots dulces y más, según cantidad de invitados.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>A partir de 15 personas</span>
-                <span class="price">$30.000 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="mesa-dulce">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Mesa dulce para eventos">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Mesa dulce básica"
-                data-price="30000"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="mesa-dulce"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- PEPAS Y SCONES -->
-          <article class="card catalog-item" data-category="dulce">
-            <div class="card-img-wrapper">
-              <img src="img/Pepas-scones-1.jpeg" alt="Pepas y scones caseros" />
-              <div class="card-pill">Pepas y scones</div>
+          <article class="product-card" data-category="dulce">
+            <div class="product-image">
+              <img src="img/Pepas-scones-1.jpeg" alt="Pepas y scones" loading="lazy" />
+              <span class="product-pill">Pepas y scones</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Pepas y scones</h3>
+            <div class="product-body">
+              <h3>Pepas y scones</h3>
+              <p>Bandejas surtidas de pepas y scones caseros.</p>
+              <div class="product-meta">
+                <span>Bandeja surtida</span>
+                <span class="price">$4.800 (referencia)</span>
               </div>
-              <p class="card-text">
-                Pepas caseras y scones para acompañar el mate o el café. Bandejas surtidas a pedido.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Bandeja surtida</span>
-                <span class="price">$4.800 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="pepas-scones">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Bandeja de pepas y scones">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Pepas y scones (bandeja)"
-                data-price="4800"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="pepas-scones"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- CHIPA -->
-          <article class="card catalog-item" data-category="salado">
-            <div class="card-img-wrapper">
-              <img src="img/chipa-1.JPG" alt="Chipa misionera" />
-              <div class="card-pill">Chipa</div>
+          <!-- SALADO -->
+          <article class="product-card" data-category="salado">
+            <div class="product-image">
+              <img src="img/chipa-1.JPG" alt="Chipa misionera" loading="lazy" />
+              <span class="product-pill">Chipa</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Chipa misionera</h3>
+            <div class="product-body">
+              <h3>Chipa misionera</h3>
+              <p>Chipa casera, suave y con mucho queso.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$4.800 (referencia)</span>
               </div>
-              <p class="card-text">
-                Chipa casera estilo misionero, suave y con mucho queso, ideal para el mate o picadas.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Por docena</span>
-                <span class="price">$4.800 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="chipa">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Chipa misionera (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Docena de chipa misionera"
-                data-price="4800"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="chipa"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- FOCACCIAS -->
-          <article class="card catalog-item" data-category="salado">
-            <div class="card-img-wrapper">
-              <img src="img/Focaccias-1.jpeg" alt="Focaccias caseras" />
-              <div class="card-pill">Focaccias</div>
+          <article class="product-card" data-category="salado">
+            <div class="product-image">
+              <img src="img/Focaccias-1.jpeg" alt="Focaccias caseras" loading="lazy" />
+              <span class="product-pill">Focaccias</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Focaccias caseras</h3>
+            <div class="product-body">
+              <h3>Focaccias caseras</h3>
+              <p>Con aceite de oliva, hierbas y diferentes toppings.</p>
+              <div class="product-meta">
+                <span>Bandeja grande</span>
+                <span class="price">$9.500 (referencia)</span>
               </div>
-              <p class="card-text">
-                Focaccias esponjosas con aceite de oliva, hierbas y toppings varios. Ideales para picadas y mesas saladas.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Bandeja grande</span>
-                <span class="price">$9.500 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="focaccias">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Focaccias caseras (bandeja)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Focaccias caseras (bandeja)"
-                data-price="9500"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="focaccias"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
 
-          <!-- SCONES SALADOS -->
-          <article class="card catalog-item" data-category="salado">
-            <div class="card-img-wrapper">
-              <img src="img/scones-1.JPG" alt="Scones salados" />
-              <div class="card-pill">Scones</div>
+          <article class="product-card" data-category="salado">
+            <div class="product-image">
+              <img src="img/scones-1.JPG" alt="Scones salados" loading="lazy" />
+              <span class="product-pill">Scones</span>
             </div>
-            <div class="card-body">
-              <div class="card-title-row">
-                <h3 class="card-title">Scones salados</h3>
+            <div class="product-body">
+              <h3>Scones salados</h3>
+              <p>Para picadas, sopas y meriendas diferentes.</p>
+              <div class="product-meta">
+                <span>Por docena</span>
+                <span class="price">$4.200 (referencia)</span>
               </div>
-              <p class="card-text">
-                Scones salados para picadas y meriendas. Se pueden combinar con chipa y nubes salados en una misma bandeja.
-              </p>
-              <div class="card-meta-row">
-                <span><span class="card-meta-dot"></span>Por docena</span>
-                <span class="price">$4.200 (ejemplo)</span>
+              <div class="product-actions">
+                <button type="button" class="btn-secondary" data-product-id="scones-salados">
+                  Ver fotos
+                </button>
+                <a href="#" class="btn-primary" data-whatsapp-product="Scones salados (docena)">
+                  Encargar por WhatsApp
+                </a>
               </div>
-              <button
-                class="btn-add"
-                type="button"
-                data-add-to-cart
-                data-name="Docena de scones salados"
-                data-price="4200"
-              >
-                <span>+</span> Agregar al carrito
-              </button>
-              <button
-                class="btn-detail"
-                type="button"
-                data-open-product="scones-salados"
-              >
-                Ver más fotos y detalles
-              </button>
             </div>
           </article>
         </div>
@@ -933,520 +623,16 @@
     </main>
 
     <footer class="footer">
-      <span>&copy; <strong>Pastelería Luisa</strong>. Catálogo completo.</span>
+      <span>© <span id="year"></span> <strong>Pastelería de Luisa</strong></span>
       <span>Diseño web por su hijo ♥</span>
     </footer>
   </div>
 
-  <!-- Panel de carrito -->
-  <div class="cart-panel" id="cart-panel" aria-label="Carrito de productos">
-    <div class="cart-panel-header">
-      <div>
-        <div class="cart-panel-title">Tu carrito</div>
-        <small style="font-size:11px; color:var(--muted);">
-          Usalo como referencia antes de escribir por WhatsApp.
-        </small>
-      </div>
-      <button class="cart-panel-close" type="button" id="close-cart">×</button>
-    </div>
-    <ul class="cart-items" id="cart-items"></ul>
-    <div class="cart-empty" id="cart-empty">Todavía no agregaste productos.</div>
-    <div class="cart-summary">
-      <span>Total estimado</span>
-      <span class="cart-total" id="cart-total">$0</span>
-    </div>
-    <div class="cart-actions">
-      <button class="btn-cart-secondary" type="button" id="clear-cart">
-        Vaciar carrito
-      </button>
-      <button class="btn-cart-primary" type="button" id="copy-cart">
-        Copiar resumen para WhatsApp
-      </button>
-    </div>
-  </div>
-
-  <!-- MODAL de producto -->
-  <div class="product-modal-backdrop" id="product-modal-backdrop">
-    <div class="product-modal" id="product-modal">
-      <button class="product-modal-close" type="button" id="close-product-modal">×</button>
+  <!-- MODAL GALERÍA -->
+  <div class="modal-backdrop" id="product-modal-backdrop">
+    <div class="modal" id="product-modal">
+      <button class="modal-close" type="button" id="close-product-modal">×</button>
       <div id="product-modal-content"></div>
-    </div>
-  </div>
-
-  <!-- DETALLES OCULTOS (plantillas) -->
-  <div class="product-details" aria-hidden="true">
-    <!-- DETALLES -->
-
-    <!-- PAN NUBES CLÁSICOS (ÚNICO) -->
-    <div id="detalle-pan-nubes-clasicos">
-      <h2 class="section-title">Pan nubes clásicos</h2>
-      <p class="section-subtitle">
-        Los pan nubes de siempre: suaves, livianos y esponjosos. Ideales para el mate, el café o el desayuno.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se pueden congelar y regenerar unos minutos en horno o airfryer. Perfectos para bandejas de desayuno y
-        meriendas familiares.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/pan-nube-1.jpg" alt="Pan nubes clásicos recién horneados" />
-          <figcaption>Pan nubes recién salidos del horno.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/pan-nube-2.jpg" alt="Pan nubes clásicos acomodados en bandeja" />
-          <figcaption>Presentación clásica para compartir.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-pan-nubes-surtidos">
-      <h2 class="section-title">Pan nubes surtidos</h2>
-      <p class="section-subtitle">
-        Bandejas con combinación de nubes dulces y salados: clásicos, especiados, con semillas y más.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideales para eventos, mesas de brunch y reuniones grandes. Se pueden armar bandejas a medida con las
-        variedades que más te gusten.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/hero-pan-nubes.JPG" alt="Bandeja de pan nubes surtidos" />
-          <figcaption>Bandeja surtida con distintas variedades de nubes.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-simple-1.jpeg" alt="Detalle de varios tipos de nubes" />
-          <figcaption>Combinación de nubes simples, dulces y salados.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-cacao">
-      <h2 class="section-title">Nubes dulces sabor cacao</h2>
-      <p class="section-subtitle">
-        Pan nubes con cacao, una opción dulce pero liviana, perfecta para acompañar el café.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se pueden combinar con otras variedades dulces (coco, naranja, simples). Consultá por opciones sin
-        azúcar refinada.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Nubes-Cacao-dulces-1.jpeg" alt="Nubes de cacao en bandeja" />
-          <figcaption>Presentación en bandeja para mesa dulce.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-Cacao-dulces-2.jpeg" alt="Detalle de nubes de cacao" />
-          <figcaption>Textura suave y esponjosa por dentro.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-Cacao-dulces-3.jpeg" alt="Nubes de cacao acomodadas en fuente" />
-          <figcaption>Listas para servir en eventos.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-coco">
-      <h2 class="section-title">Nubes dulces sabor coco</h2>
-      <p class="section-subtitle">
-        Nubes dulces con coco rallado, aromáticos y suaves, ideales para mate, café o meriendas.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se pueden combinar con otras variedades dulces o armar bandejas solo de coco para quienes aman ese sabor.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Nubes-coco-1.jpeg" alt="Nubes de coco en bandeja" />
-          <figcaption>Presentación en bandeja de nubes sabor coco.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-coco-2.jpeg" alt="Detalle cercano de nubes de coco" />
-          <figcaption>Detalle de textura y color.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-coco-3.jpeg" alt="Nubes de coco acomodadas para servir" />
-          <figcaption>Listas para servir en reuniones.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-naranja">
-      <h2 class="section-title">Nubes dulces sabor naranja</h2>
-      <p class="section-subtitle">
-        Nubes con aroma cítrico a naranja, livianos y frescos, ideales para acompañar un té o un café.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Podés combinarlos con nubes simples o de coco para armar una bandeja variada.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Nubes-naranja-1.jpeg" alt="Nubes sabor naranja en bandeja" />
-          <figcaption>Presentación en bandeja de nubes de naranja.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-naranja-2.jpeg" alt="Detalle cercano de nubes de naranja" />
-          <figcaption>Color y textura de la masa saborizada.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-semillas">
-      <h2 class="section-title">Nubes con semillas</h2>
-      <p class="section-subtitle">
-        Pan nubes con mezcla de semillas, una opción distinta y más rústica.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideales para quienes buscan algo diferente dentro de las opciones de pan nubes. Se pueden combinar con
-        nubes simples y especiados en una misma bandeja.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Nubes-semillas-1.jpeg" alt="Nubes con semillas" />
-          <figcaption>Nubes con semillas listas para servir.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-semillas-2.jpeg" alt="Detalle de nubes con semillas" />
-          <figcaption>Textura y superficie con mezcla de semillas.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-semillas-3.jpeg" alt="Nubes con semillas en bandeja" />
-          <figcaption>Presentación en bandeja para compartir.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-harina-almendra">
-      <h2 class="section-title">Nubes con harina de almendra</h2>
-      <p class="section-subtitle">
-        Nubes hechos con harina de almendra, una variante diferente para quienes buscan otras harinas.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Consultá por opciones combinadas con otras variedades o por bandejas especiales para personas con
-        ciertos cuidados en la alimentación.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/nubes-harina-almendra-1.jpeg" alt="Nubes con harina de almendra" />
-          <figcaption>Presentación en bandeja de nubes con harina de almendra.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/nubes-harina-almendra-2.jpeg" alt="Detalle de textura con harina de almendra" />
-          <figcaption>Detalle de la miga y la textura.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-simples">
-      <h2 class="section-title">Nubes simples</h2>
-      <p class="section-subtitle">
-        La base de todas las variantes de pan nubes. Textura suave y liviana, con sabor neutro.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Podés usarlos para armar sándwiches, acompañar el mate o combinarlos con variedades dulces en una
-        misma bandeja.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Nubes-simple-1.jpeg" alt="Nubes simples en bandeja" />
-          <figcaption>Nubes simples acomodados para servir.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-simple-2.jpeg" alt="Detalle de nubes simples" />
-          <figcaption>Textura esponjosa y suave.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-pata">
-      <h2 class="section-title">Nubes para pata y picadas</h2>
-      <p class="section-subtitle">
-        Nubes pensados para acompañar pata, fiambres y picadas. Ligeros pero con sabor, para complementar la mesa.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se arman bandejas grandes para eventos, con la cantidad que necesites. Consultá por tamaños y combinaciones.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Nubes-Pata-1.jpeg" alt="Nubes para pata en fuente" />
-          <figcaption>Bandeja de nubes para acompañar pata y fiambres.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-Pata-2.jpeg" alt="Detalle de nubes para pata" />
-          <figcaption>Distintas formas y tamaños según el uso.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-lomo">
-      <h2 class="section-title">Nubes lomo</h2>
-      <p class="section-subtitle">
-        Nubes pensados para armar sándwiches de lomo u otros rellenos, suaves pero firmes para sostener el relleno.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideales para eventos donde se sirven sándwiches calientes o fríos. Se arman bandejas según cantidad
-        de invitados.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Nubes-lomo-1.jpeg" alt="Nubes lomo en bandeja" />
-          <figcaption>Bandeja de nubes lomo listos para rellenar.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-lomo-2.jpeg" alt="Detalle de nubes lomo" />
-          <figcaption>Textura y forma adaptadas para sándwiches.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-nubes-especiados">
-      <h2 class="section-title">Nubes especiados</h2>
-      <p class="section-subtitle">
-        Nubes saborizados con orégano, queso y sabores tipo pizza. Una opción distinta dentro de las bandejas saladas.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Funcionan muy bien en picadas y mesas saladas. Se pueden combinar con chipa, scones y otras variedades
-        de nubes.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Nubes-especiados-1.jpeg" alt="Nubes especiados en bandeja" />
-          <figcaption>Presentación de nubes especiados listos para servir.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Nubes-especiados-2.jpeg" alt="Detalle de nubes especiados" />
-          <figcaption>Textura y dorado de los nubes especiados.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-budines-saludables">
-      <h2 class="section-title">Budines saludables</h2>
-      <p class="section-subtitle">
-        Budines sin harina de trigo y sin azúcar refinada, hechos con harinas alternativas como almendra o nuez.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideales para quienes cuidan lo que comen, pero no quieren dejar de disfrutar algo rico. Consultá por
-        sabores disponibles y tamaño de los budines.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/budines-saludables-1.jpeg" alt="Budines saludables" />
-          <figcaption>Budines en diferentes tamaños y presentaciones.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/budines-saludables-2.jpeg" alt="Detalle de budín saludable" />
-          <figcaption>Textura húmeda y suave sin usar harina de trigo.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-cheesecake">
-      <h2 class="section-title">Cheesecake</h2>
-      <p class="section-subtitle">
-        Cheesecake cremoso con base de galletas. Se puede combinar con diferentes toppings: frutos rojos,
-        dulce de leche, ganache, etc.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideal para celebraciones, reuniones o como postre especial. Consultá por sabores y tamaño según
-        cantidad de personas.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Cheesecake-1.jpeg" alt="Cheesecake decorado" />
-          <figcaption>Cheesecake casero con cobertura decorada.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-tarta-frutillas">
-      <h2 class="section-title">Tarta de frutillas</h2>
-      <p class="section-subtitle">
-        Base crocante, crema suave y frutillas frescas. Un clásico que nunca falla.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideal para postres, meriendas y celebraciones. Se puede adaptar el tamaño según la cantidad de
-        personas.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Tarta-frutillas-1.jpeg" alt="Tarta de frutillas" />
-          <figcaption>Tarta de frutillas completa.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Tarta-frutillas-2.jpeg" alt="Detalle de tarta de frutillas" />
-          <figcaption>Detalle de la fruta fresca y la crema.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-tarta-peras-almendras">
-      <h2 class="section-title">Tarta de peras y almendras</h2>
-      <p class="section-subtitle">
-        Tarta rústica con peras frescas y crema de almendras, para quienes prefieren postres menos dulces
-        pero muy sabrosos.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideal para meriendas especiales o como postre diferente. Consultá por tamaños y presentación.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/tarta-peras-almendras-1.jpeg" alt="Tarta de peras y almendras" />
-          <figcaption>Presentación de tarta de peras y almendras.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-torta-harina-nuez">
-      <h2 class="section-title">Torta con harina de nuez</h2>
-      <p class="section-subtitle">
-        Bizcocho húmedo con harina de nuez, sabor intenso y muy aromático, ideal para amantes de los frutos secos.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se puede cubrir con crema, ganache o simplemente azúcar impalpable, según el estilo de la celebración.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/torta-harina-nuez-1.jpeg" alt="Torta de harina de nuez" />
-          <figcaption>Torta con harina de nuez completa.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/torta-harina-nuez-2.jpeg" alt="Detalle de torta de nuez" />
-          <figcaption>Detalle de la miga y cobertura.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-torta-selvanegra">
-      <h2 class="section-title">Torta selvanegra</h2>
-      <p class="section-subtitle">
-        Versión casera de la clásica selvanegra, con capas de bizcochuelo, crema y frutas.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideal para cumpleaños, aniversarios y ocasiones especiales. Consultá por sabores y decoración.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Torta-selvanegra-1.jpeg" alt="Torta selvanegra" />
-          <figcaption>Presentación de torta selvanegra.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-torta-cumple">
-      <h2 class="section-title">Torta de cumpleaños personalizada</h2>
-      <p class="section-subtitle">
-        Tortas decoradas a pedido: sabores, rellenos, colores y estilo adaptados a cada persona.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se pueden hacer diseños simples o más elaborados. Siempre con bizcochuelos húmedos y rellenos elegidos
-        por quien encarga.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/torta-1.JPG" alt="Torta de cumpleaños decorada" />
-          <figcaption>Ejemplo de torta de cumpleaños decorada.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-facturas">
-      <h2 class="section-title">Medialunas y facturas</h2>
-      <p class="section-subtitle">
-        Bandejas de facturas caseras y medialunas suaves. Ideales para desayunos, meriendas o mesas de café.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se pueden armar bandejas surtidas según la cantidad de personas. Consultá por variedades disponibles.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/facturas-1.JPG" alt="Facturas surtidas" />
-          <figcaption>Ejemplo de bandeja de facturas y medialunas.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-mesa-dulce">
-      <h2 class="section-title">Mesa dulce para eventos</h2>
-      <p class="section-subtitle">
-        Mesas dulces armadas a medida según cantidad de invitados y tipo de evento.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Incluyen mini postres, tartas pequeñas, shots dulces y otras preparaciones. Se coordina todo por WhatsApp
-        según gustos, presupuesto y cantidad de personas.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/mesa-dulce-1.JPG" alt="Mesa dulce con distintos postres" />
-          <figcaption>Ejemplo de mesa dulce armada para un evento.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-pepas-scones">
-      <h2 class="section-title">Pepas y scones</h2>
-      <p class="section-subtitle">
-        Pepas caseras y scones para acompañar desayunos, meriendas o mesas de café.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se pueden armar bandejas surtidas y combinar con otras opciones dulces como budines o tartas.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Pepas-scones-1.jpeg" alt="Pepas y scones en bandeja" />
-          <figcaption>Bandeja de pepas y scones caseros.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-chipa">
-      <h2 class="section-title">Chipa misionera</h2>
-      <p class="section-subtitle">
-        Chipa casera estilo misionero, con mucho queso y textura suave. Ideal para el mate y las picadas.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se vende por docena, y se pueden combinar con bandejas de nubes salados o scones para mesas más grandes.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/chipa-1.JPG" alt="Chipa misionera" />
-          <figcaption>Chipa misionera recién horneada.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-focaccias">
-      <h2 class="section-title">Focaccias caseras</h2>
-      <p class="section-subtitle">
-        Focaccias esponjosas con aceite de oliva, hierbas y diferentes toppings salados.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Ideales para picadas, mesas saladas o para usar como base de sandwiches. Se venden en bandejas.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/Focaccias-1.jpeg" alt="Focaccias caseras" />
-          <figcaption>Focaccias en bandeja listas para servir.</figcaption>
-        </figure>
-        <figure>
-          <img src="img/Focaccias-2.jpeg" alt="Detalle de focaccias" />
-          <figcaption>Detalle de corte y miga.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div id="detalle-scones-salados">
-      <h2 class="section-title">Scones salados</h2>
-      <p class="section-subtitle">
-        Scones salados que acompañan muy bien picadas, sopas y meriendas diferentes.
-      </p>
-      <p style="font-size:14px; color:#7a5858; margin-bottom:10px;">
-        Se pueden combinar en bandejas con chipa y nubes salados. Consultá por cantidad mínima y combinaciones.
-      </p>
-      <div class="product-gallery">
-        <figure>
-          <img src="img/scones-1.JPG" alt="Scones salados caseros" />
-          <figcaption>Scones salados listos para servir.</figcaption>
-        </figure>
-      </div>
     </div>
   </div>
 
