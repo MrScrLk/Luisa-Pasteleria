@@ -330,50 +330,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// BOTÓN VOLVER ARRIBA (AUTO)
+// BOTÓN VOLVER ARRIBA NUEVO
 // =========================
 (function () {
-  function createBackToTopIfMissing() {
-    let btn = document.getElementById("back-to-top");
+  const btn = document.getElementById("luisa-btt");
+  if (!btn) return;
 
-    if (!btn) {
-      btn = document.createElement("button");
-      btn.className = "back-to-top";
-      btn.id = "back-to-top";
-      btn.type = "button";
-      btn.setAttribute("aria-label", "Volver arriba");
-      btn.textContent = "↑";
-      document.body.appendChild(btn);
-    }
+  const toggle = () => {
+    btn.classList.toggle("is-visible", window.scrollY > 240);
+  };
 
-    return btn;
-  }
+  toggle();
+  window.addEventListener("scroll", toggle, { passive: true });
 
-  function init() {
-    const btn = createBackToTopIfMissing();
+  btn.addEventListener("click", () => {
+    // mini efecto pop
+    btn.style.transform = "translateY(-2px) scale(0.96)";
+    setTimeout(() => (btn.style.transform = ""), 120);
 
-    const toggleVisibility = () => {
-      if (window.scrollY > 220) {
-        btn.classList.add("is-visible");
-      } else {
-        btn.classList.remove("is-visible");
-      }
-    };
-
-    toggleVisibility();
-    window.addEventListener("scroll", toggleVisibility, { passive: true });
-
-    btn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 })();
+
 
  
 
