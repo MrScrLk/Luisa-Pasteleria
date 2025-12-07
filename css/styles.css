@@ -861,7 +861,7 @@ body {
 }
 
 /* 2) Contenedor central limpio */
-.page {
+.container {
   width: min(1100px, 92vw);
   margin: 24px auto 48px auto;
 
@@ -880,7 +880,7 @@ body {
 
 /* 3) En pantallas muy grandes, que no quede "vacío" */
 @media (min-width: 1400px) {
-  .page {
+  .container {
     width: min(1200px, 90vw);
   }
 }
