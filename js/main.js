@@ -398,6 +398,31 @@ document.addEventListener("DOMContentLoaded", () => {
     return btn;
   }
 
+      // Ajuste mobile para que no quede gigante
+    const mq = window.matchMedia("(max-width: 600px)");
+    const applyMobile = () => {
+      if (mq.matches) {
+        btn.style.width = "48px";
+        btn.style.height = "48px";
+        btn.style.right = "14px";
+        btn.style.bottom = "14px";
+        btn.style.borderRadius = "14px";
+        btn.style.fontSize = "22px";
+      } else {
+        btn.style.width = "56px";
+        btn.style.height = "56px";
+        btn.style.right = "22px";
+        btn.style.bottom = "22px";
+        btn.style.borderRadius = "18px";
+        btn.style.fontSize = "24px";
+      }
+    };
+    applyMobile();
+    mq.addEventListener?.("change", applyMobile);
+
+
+  
+
   function init() {
     killOldButtons();
     const btn = createNewButton();
