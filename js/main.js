@@ -527,7 +527,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.appendChild(btn);
 
-  // Ajuste mobile
+ /* // Ajuste mobile
   const mq = window.matchMedia("(max-width: 600px)");
   const applyMobile = () => {
     if (mq.matches) {
@@ -547,7 +547,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   applyMobile();
-  mq.addEventListener?.("change", applyMobile);
+  mq.addEventListener?.("change", applyMobile); */
+
+  
 })();
 
 
