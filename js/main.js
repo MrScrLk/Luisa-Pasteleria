@@ -330,51 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    // =========================
-  // NIEVE SUAVE SOLO EN DICIEMBRE
-  // =========================
-  const isDecember = new Date().getMonth() === 11; // 0=Ene ... 11=Dic
-
-  if (isDecember) {
-    startSnowfall(28);
-  }
-
-  function startSnowfall(count = 25) {
-    const flakes = [];
-
-    for (let i = 0; i < count; i++) {
-      const flake = document.createElement("span");
-      flake.className = "snowflake";
-      flake.textContent = "❄️";
-
-      const size = random(10, 22);
-      const left = random(0, 100);
-      const fallDuration = random(8, 18);
-      const swayDuration = random(3, 6);
-      const delay = random(0, 8);
-
-      flake.style.left = `${left}vw`;
-      flake.style.fontSize = `${size}px`;
-      flake.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
-      flake.style.animationDelay = `${delay}s, ${delay}s`;
-
-      // opacidad suave variada
-      flake.style.opacity = (Math.random() * 0.35 + 0.5).toFixed(2);
-
-      document.body.appendChild(flake);
-      flakes.push(flake);
-    }
-
-    // limpia nieve si cambias de página rápido
-    window.addEventListener("beforeunload", () => {
-      flakes.forEach((f) => f.remove());
-    });
-  }
-
-  function random(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
+ 
 
 
 });
