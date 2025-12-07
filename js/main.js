@@ -428,4 +428,97 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 
+// ==========================================
+// BOTÓN INSTAGRAM FLOTANTE
+// ==========================================
+(function () {
+  const IG_USER = "luisapasteleria";
+  const IG_URL = `https://www.instagram.com/luisapasteleria/${IG_USER}`;
+
+  
+  if (document.getElementById("luisa-ig-float")) return;
+
+  const btn = document.createElement("a");
+  btn.id = "luisa-ig-float";
+  btn.href = IG_URL;
+  btn.target = "_blank";
+  btn.rel = "noopener noreferrer";
+  btn.setAttribute("aria-label", "Instagram de Luisa Pastelería");
+  btn.title = "Instagram";
+
+  // Logo con estilo emoji-ready y universal
+  btn.innerHTML = "📸";
+
+  // Estilos inline
+  btn.style.position = "fixed";
+  btn.style.right = "22px";
+  btn.style.bottom = "92px"; // arriba del botón volver arriba
+  btn.style.zIndex = "999999";
+  btn.style.width = "56px";
+  btn.style.height = "56px";
+  btn.style.borderRadius = "18px";
+  btn.style.display = "grid";
+  btn.style.placeItems = "center";
+  btn.style.textDecoration = "none";
+  btn.style.fontSize = "24px";
+  btn.style.color = "#fff";
+  btn.style.background =
+    "linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4)";
+  btn.style.boxShadow =
+    "0 18px 40px rgba(221,42,123,.35), 0 8px 18px rgba(0,0,0,.12)";
+  btn.style.transform = "translateY(0) scale(1)";
+  btn.style.transition = "transform .2s ease, filter .2s ease, box-shadow .2s ease";
+  btn.style.cursor = "pointer";
+
+  // Animación suave de flotación
+  btn.animate(
+    [
+      { transform: "translateY(0) scale(1)" },
+      { transform: "translateY(-4px) scale(1.01)" },
+      { transform: "translateY(0) scale(1)" }
+    ],
+    { duration: 2800, iterations: Infinity, easing: "ease-in-out" }
+  );
+
+  // Hover más “Instagram”
+  btn.addEventListener("mouseenter", () => {
+    btn.style.filter = "brightness(1.08) saturate(1.12)";
+    btn.style.transform = "translateY(-2px) scale(1.05)";
+    btn.style.boxShadow =
+      "0 22px 48px rgba(221,42,123,.45), 0 10px 22px rgba(0,0,0,.14)";
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    btn.style.filter = "";
+    btn.style.transform = "translateY(0) scale(1)";
+    btn.style.boxShadow =
+      "0 18px 40px rgba(221,42,123,.35), 0 8px 18px rgba(0,0,0,.12)";
+  });
+
+  document.body.appendChild(btn);
+
+  // Ajuste mobile
+  const mq = window.matchMedia("(max-width: 600px)");
+  const applyMobile = () => {
+    if (mq.matches) {
+      btn.style.width = "48px";
+      btn.style.height = "48px";
+      btn.style.right = "14px";
+      btn.style.bottom = "76px";
+      btn.style.borderRadius = "14px";
+      btn.style.fontSize = "22px";
+    } else {
+      btn.style.width = "56px";
+      btn.style.height = "56px";
+      btn.style.right = "22px";
+      btn.style.bottom = "92px";
+      btn.style.borderRadius = "18px";
+      btn.style.fontSize = "24px";
+    }
+  };
+  applyMobile();
+  mq.addEventListener?.("change", applyMobile);
+})();
+
+
 
