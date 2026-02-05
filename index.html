@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luisa Pastelería | Pastelería artesanal</title>
+  <meta name="description" content="Luisa Pastelería: tortas, budines, focaccias, nubes y mesas dulces. Armá tu carrito y pedí por WhatsApp." />
+
+  <meta property="og:title" content="Luisa Pastelería" />
+  <meta property="og:description" content="Catálogo, destacados y pedido por WhatsApp." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/hero-pan-nubes.JPG" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23161616' d='M16 28c0-9 7-16 16-16s16 7 16 16c0 2-.4 4-1.1 5.8C52 35.6 56 40.2 56 46c0 9.4-10.7 14-24 14S8 55.4 8 46c0-5.8 4-10.4 9.1-12.2C16.4 32 16 30 16 28z'/%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <a class="skip" href="#catalogo">Saltar al catálogo</a>
+
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Ir al inicio">
+        <span class="brand__mark" aria-hidden="true">L</span>
+        <span class="brand__text">
+          <span class="brand__title">Luisa Pastelería</span>
+          <span class="brand__subtitle">Hecho artesanal</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="nav__link" href="#destacados">Destacados</a>
+        <a class="nav__link" href="#catalogo">Catálogo</a>
+        <a class="nav__link" href="#acerca">Acerca</a>
+        <a class="nav__link" href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="iconbtn" id="openCartBtn" type="button" aria-label="Abrir carrito">
+          <span class="iconbtn__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="lineicon">
+              <path d="M6 6h15l-2 9H7L6 6Z" />
+              <path d="M6 6 5 3H2" />
+              <path d="M9 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
+              <path d="M17 20a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
+            </svg>
+          </span>
+          <span class="iconbtn__badge" id="cartCount" aria-label="Cantidad de productos">0</span>
+        </button>
+
+        <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobileNav" id="mobileNav" aria-label="Menú móvil">
+      <a class="mobileNav__link" href="#destacados">Destacados</a>
+      <a class="mobileNav__link" href="#catalogo">Catálogo</a>
+      <a class="mobileNav__link" href="#acerca">Acerca</a>
+      <a class="mobileNav__link" href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero__bg" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <div class="hero__card">
+          <p class="pill">Artesanal · Personalizado · Fresco</p>
+
+          <h1 class="hero__title">
+            Pastelería para momentos
+            <span class="hero__titleAccent">especiales</span>
+          </h1>
+
+          <p class="hero__text">
+            Elegí tus favoritos, armá el carrito y enviá el pedido por WhatsApp.
+            Si querés algo a medida, también podés consultar directo.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#catalogo">Ver catálogo</a>
+
+            <button class="btn btn--ghost" id="heroWspBtn" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="lineicon">
+                  <path d="M20 12a8 8 0 0 1-12.9 6.3L4 19l.8-3.1A8 8 0 1 1 20 12Z"/>
+                  <path d="M9.5 9.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.4.5c-.1.2-.1.4 0 .6.5 1 1.4 1.8 2.3 2.3.2.1.4.1.6 0l.5-.4c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.5v.6c0 .3 0 .5-.5.7-.7.3-2 .4-4-.6-2-.9-3.8-2.8-4.6-4.6-1-2.1-.9-3.4-.6-4Z"/>
+                </svg>
+              </span>
+              Consultar por WhatsApp
+            </button>
+          </div>
+
+          <div class="hero__mini">
+            <div class="mini">
+              <span class="mini__dot" aria-hidden="true"></span>
+              <span>Entrega / Retiro a coordinar</span>
+            </div>
+            <div class="mini">
+              <span class="mini__dot" aria-hidden="true"></span>
+              <span>Pedidos con anticipación</span>
+            </div>
+            <div class="mini">
+              <span class="mini__dot" aria-hidden="true"></span>
+              <span>Opciones personalizadas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTACADOS -->
+    <section class="section" id="destacados" aria-label="Destacados">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Destacados</h2>
+          <p class="section__subtitle">Elegidos para arrancar rápido.</p>
+        </div>
+
+        <div class="grid" id="featuredGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- CATALOGO -->
+    <section class="section section--soft" id="catalogo" aria-label="Catálogo">
+      <div class="container">
+        <div class="section__head section__head--split">
+          <div>
+            <h2 class="section__title">Catálogo</h2>
+            <p class="section__subtitle">Buscá, filtrá, ordená y agregá al carrito.</p>
+          </div>
+
+          <div class="catalogControls" role="region" aria-label="Controles del catálogo">
+            <div class="control">
+              <label class="control__label" for="searchInput">Buscar</label>
+              <input class="control__input" id="searchInput" type="search" placeholder="Ej: budín, torta, nube…" autocomplete="off" />
+            </div>
+
+            <div class="control">
+              <label class="control__label" for="categorySelect">Categoría</label>
+              <select class="control__select" id="categorySelect"></select>
+            </div>
+
+            <div class="control">
+              <label class="control__label" for="sortSelect">Orden</label>
+              <select class="control__select" id="sortSelect">
+                <option value="recomendado">Recomendado</option>
+                <option value="precio-asc">Precio: menor a mayor</option>
+                <option value="precio-desc">Precio: mayor a menor</option>
+                <option value="nombre-asc">Nombre: A → Z</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid" id="catalogGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ACERCA -->
+    <section class="section" id="acerca" aria-label="Acerca de Luisa">
+      <div class="container about">
+        <div class="about__content">
+          <h2 class="section__title">Acerca de mí</h2>
+          <p class="about__text">
+            Hola, soy Luisa. Me dedico a la pastelería artesanal y trabajo con dedicación en cada detalle:
+            sabor, frescura y presentación. Si tenés una idea, la armamos juntas/os.
+          </p>
+
+          <div class="about__points">
+            <div class="point">
+              <span class="point__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="lineicon">
+                  <path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11Z"/>
+                  <path d="M9.5 10.5 11 12l3.5-4"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="point__title">Calidad real</h3>
+                <p class="point__desc">Ingredientes seleccionados y preparación cuidada.</p>
+              </div>
+            </div>
+
+            <div class="point">
+              <span class="point__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="lineicon">
+                  <path d="M7 7h10v10H7z"/>
+                  <path d="M7 11h10"/>
+                  <path d="M11 7v10"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="point__title">Personalización</h3>
+                <p class="point__desc">Dedicatorias, tamaños, sabores y detalles especiales.</p>
+              </div>
+            </div>
+
+            <div class="point">
+              <span class="point__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="lineicon">
+                  <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                  <path d="M12 7v5l3 2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="point__title">A tiempo</h3>
+                <p class="point__desc">Coordinamos entrega/retiro con anticipación.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__media">
+          <div class="frame">
+            <img src="img/hero-pan-nubes.JPG" alt="Luisa Pastelería" loading="lazy">
+          </div>
+          <p class="about__hint">Tip: podés cambiar esta foto por una de Luisa trabajando.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section section--soft" id="contacto" aria-label="Contacto">
+      <div class="container contact">
+        <div class="contact__card">
+          <h2 class="section__title">Contacto</h2>
+          <p class="contact__text">
+            ¿Querés algo personalizado, una mesa dulce o consultar disponibilidad?
+            Escribime y lo armamos juntos.
+          </p>
+
+          <div class="contact__actions">
+            <button class="btn btn--primary" id="contactWspBtn" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="lineicon">
+                  <path d="M20 12a8 8 0 0 1-12.9 6.3L4 19l.8-3.1A8 8 0 1 1 20 12Z"/>
+                  <path d="M9.5 9.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.4.5c-.1.2-.1.4 0 .6.5 1 1.4 1.8 2.3 2.3.2.1.4.1.6 0l.5-.4c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.5v.6c0 .3 0 .5-.5.7-.7.3-2 .4-4-.6-2-.9-3.8-2.8-4.6-4.6-1-2.1-.9-3.4-.6-4Z"/>
+                </svg>
+              </span>
+              Escribir por WhatsApp
+            </button>
+
+            <a class="btn btn--ghost" id="igLink" href="#" target="_blank" rel="noreferrer">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="lineicon">
+                  <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"/>
+                  <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/>
+                  <path d="M17.5 6.5h.01"/>
+                </svg>
+              </span>
+              Instagram
+            </a>
+          </div>
+
+          <div class="contact__meta">
+            <div class="metaItem">
+              <span class="metaItem__k">Entrega / Retiro</span>
+              <span class="metaItem__v">A coordinar</span>
+            </div>
+            <div class="metaItem">
+              <span class="metaItem__k">Pedidos</span>
+              <span class="metaItem__v">Con anticipación</span>
+            </div>
+            <div class="metaItem">
+              <span class="metaItem__k">Pagos</span>
+              <span class="metaItem__v">Efectivo / Transferencia</span>
+            </div>
+          </div>
+
+          <p class="smallnote">
+            Los precios son estimativos (“desde”). Confirmamos por WhatsApp según tamaño y personalización.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <div class="footer__brand">Luisa Pastelería</div>
+        <div class="footer__small">Hecho artesanal · Pedido por WhatsApp</div>
+      </div>
+      <div class="footer__right">
+        <a class="footer__link" href="#catalogo">Catálogo</a>
+        <a class="footer__link" href="#acerca">Acerca</a>
+        <a class="footer__link" href="#contacto">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating -->
+  <div class="floating" aria-label="Accesos rápidos">
+    <a class="fab fab--ig" id="igFab" href="#" target="_blank" rel="noreferrer" aria-label="Abrir Instagram">
+      <svg viewBox="0 0 24 24" class="lineicon">
+        <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"/>
+        <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"/>
+        <path d="M17.5 6.5h.01"/>
+      </svg>
+    </a>
+
+    <button class="fab fab--top" id="backToTopBtn" type="button" aria-label="Volver arriba">
+      <svg viewBox="0 0 24 24" class="lineicon">
+        <path d="M12 19V5"/>
+        <path d="M6 11l6-6 6 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Product Modal -->
+  <div class="modal" id="productModal" aria-hidden="true" role="dialog" aria-label="Detalle del producto">
+    <div class="modal__overlay" data-close="true"></div>
+    <div class="modal__panel" role="document" aria-modal="true">
+      <button class="modal__close" type="button" data-close="true" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" class="lineicon">
+          <path d="M6 6 18 18"/><path d="M18 6 6 18"/>
+        </svg>
+      </button>
+
+      <div class="modal__content">
+        <div class="modal__media">
+          <img id="modalMainImg" src="" alt="" />
+          <div class="thumbs" id="modalThumbs"></div>
+        </div>
+
+        <div class="modal__info">
+          <div class="modal__top">
+            <h3 class="modal__title" id="modalTitle">Producto</h3>
+            <span class="tag" id="modalCategory">Categoría</span>
+          </div>
+
+          <p class="modal__desc" id="modalDesc">
+            Podés consultar por tamaños/porciones y personalización.
+          </p>
+
+          <div class="modal__price">
+            <span class="modal__priceLabel">Precio</span>
+            <span class="modal__priceValue" id="modalPrice">$0</span>
+          </div>
+
+          <div class="modal__actions">
+            <button class="btn btn--primary" id="modalAddBtn" type="button">Agregar al carrito</button>
+            <button class="btn btn--ghost" id="modalGoCartBtn" type="button">Ver carrito</button>
+          </div>
+
+          <p class="modal__note">
+            *Los precios pueden variar según tamaño. Te confirmamos por WhatsApp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <aside class="drawer" id="cartDrawer" aria-hidden="true" aria-label="Carrito de compras">
+    <div class="drawer__overlay" data-close-cart="true"></div>
+    <div class="drawer__panel" role="dialog" aria-label="Panel de carrito" aria-modal="true">
+      <div class="drawer__head">
+        <div>
+          <h3 class="drawer__title">Tu carrito</h3>
+          <p class="drawer__subtitle">Armá tu pedido y enviá por WhatsApp.</p>
+        </div>
+        <button class="drawer__close" type="button" data-close-cart="true" aria-label="Cerrar carrito">
+          <svg viewBox="0 0 24 24" class="lineicon">
+            <path d="M6 6 18 18"/><path d="M18 6 6 18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="drawer__body">
+        <div class="cartList" id="cartList"></div>
+
+        <div class="cartNotes">
+          <label class="control__label" for="notesInput">Notas del pedido</label>
+          <textarea class="control__textarea" id="notesInput" rows="3"
+            placeholder="Ej: Para el sábado 18, sin maní, con dedicatoria…"></textarea>
+        </div>
+      </div>
+
+      <div class="drawer__foot">
+        <div class="totals">
+          <span class="totals__label">Total</span>
+          <span class="totals__value" id="cartTotal">$0</span>
+        </div>
+
+        <button class="btn btn--primary btn--full" id="sendWspBtn" type="button">
+          <span class="btn__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="lineicon">
+              <path d="M20 12a8 8 0 0 1-12.9 6.3L4 19l.8-3.1A8 8 0 1 1 20 12Z"/>
+              <path d="M9.5 9.2c.2-.5.4-.5.7-.5h.6c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.4.5c-.1.2-.1.4 0 .6.5 1 1.4 1.8 2.3 2.3.2.1.4.1.6 0l.5-.4c.2-.2.4-.2.7-.1l1.4.6c.3.1.4.3.4.5v.6c0 .3 0 .5-.5.7-.7.3-2 .4-4-.6-2-.9-3.8-2.8-4.6-4.6-1-2.1-.9-3.4-.6-4Z"/>
+            </svg>
+          </span>
+          Enviar pedido por WhatsApp
+        </button>
+
+        <button class="btn btn--ghost btn--full" id="clearCartBtn" type="button">Vaciar carrito</button>
+      </div>
+    </div>
+  </aside>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
