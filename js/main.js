@@ -131,7 +131,10 @@ if (modalAddBtn){
   });
 }
 if (modalGoCartBtn){
-  modalGoCartBtn.addEventListener("click", () => openCart());
+  modalGoCartBtn.addEventListener("click", () => {
+    closeModal();
+    openCart();
+  });
 }
 
 /* ============================
