@@ -23,6 +23,8 @@ body{
   background: var(--bg);
 }
 
+body.no-scroll { overflow: hidden; }
+
 /* Fondo sutil estilo pastelería (sin emojis) */
 body::before{
   content:"";
