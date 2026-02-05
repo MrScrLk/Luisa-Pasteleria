@@ -274,12 +274,29 @@ body::before{
   position: relative;
 }
 .hero__titleAccent{
-  background: linear-gradient(135deg, #6a3b5c, #1f1f1f);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 1px 0 rgba(255,255,255,.6);
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: #1b1b1b;
+
+  /* acento sutil */
+  position: relative;
+  font-weight: 900;
 }
+.hero__titleAccent::after{
+  content:"";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 0.08em;
+
+  height: 0.42em;
+  background: rgba(240,185,201,.55); /* rosa suave */
+  border-radius: 999px;
+  z-index: -1;
+  transform: rotate(-1.2deg);
+}
+
 
 .hero__text{
   margin: 10px 0 0;
