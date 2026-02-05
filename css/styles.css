@@ -274,11 +274,13 @@ body::before{
   position: relative;
 }
 .hero__titleAccent{
-  background: linear-gradient(135deg, rgba(231,217,255,.9), rgba(255,228,239,.8));
+  background: linear-gradient(135deg, #6a3b5c, #1f1f1f);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 0 1px 0 rgba(255,255,255,.6);
 }
+
 .hero__text{
   margin: 10px 0 0;
   color: var(--muted);
