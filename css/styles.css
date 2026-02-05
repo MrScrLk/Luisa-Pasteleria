@@ -16,6 +16,7 @@
 
 *{ box-sizing: border-box; }
 html{ scroll-behavior: smooth; }
+
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
@@ -23,7 +24,10 @@ body{
   background: var(--bg);
 }
 
-body.no-scroll { overflow: hidden; }
+/* ✅ FIX: bloquear scroll cuando modal o carrito están abiertos */
+body.no-scroll{
+  overflow: hidden;
+}
 
 /* Fondo sutil estilo pastelería (sin emojis) */
 body::before{
@@ -814,6 +818,15 @@ img{ max-width: 100%; display: block; }
   display:grid;
   gap: 10px;
 }
+
+/* ✅ Mejora: cuando el carrito está vacío */
+.empty{
+  padding: 12px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.75);
+}
+
 .cartItem{
   display:grid;
   grid-template-columns: 70px 1fr;
