@@ -1,5 +1,5 @@
-const WHATSAPP_NUMBER = "54911XXXXXXXX"; // Ej: Argentina +54 9 11 ... => "54911..."
-const INSTAGRAM_URL = "https://www.instagram.com/tu_cuenta/"; // Cambiar a la cuenta real
+const WHATSAPP_NUMBER = "54911XXXXXXXX"; // Ej: "54911..."
+const INSTAGRAM_URL = "https://www.instagram.com/tu_cuenta/";
 
 /* ============================
    Helpers
@@ -17,6 +17,15 @@ function moneyARS(n){
 function safeNumber(v){
   const n = Number(v);
   return Number.isFinite(n) ? n : 0;
+}
+
+/* ============================
+   Scroll lock (✅ evita bugs)
+   ============================ */
+function syncScrollLock(){
+  const modalOpen = productModal?.classList.contains("is-open");
+  const cartOpen = cartDrawer?.classList.contains("is-open");
+  document.body.classList.toggle("no-scroll", Boolean(modalOpen || cartOpen));
 }
 
 /* ============================
@@ -47,8 +56,7 @@ if (hamburgerBtn && mobileNav){
 const backToTopBtn = $("#backToTopBtn");
 window.addEventListener("scroll", () => {
   if (!backToTopBtn) return;
-  const show = window.scrollY > 500;
-  backToTopBtn.classList.toggle("is-visible", show);
+  backToTopBtn.classList.toggle("is-visible", window.scrollY > 500);
 });
 if (backToTopBtn){
   backToTopBtn.addEventListener("click", () => {
@@ -71,6 +79,8 @@ const modalGoCartBtn = $("#modalGoCartBtn");
 let modalCurrentProduct = null;
 
 function openModal(productEl){
+  if (!productModal) return;
+
   modalCurrentProduct = productEl;
   const name = productEl.dataset.name || "Producto";
   const category = productEl.dataset.category || "Categoría";
@@ -78,40 +88,44 @@ function openModal(productEl){
   const mainImg = productEl.dataset.img || "";
   const gallery = (productEl.dataset.gallery || mainImg).split("|").filter(Boolean);
 
-  modalTitle.textContent = name;
-  modalCategory.textContent = category;
-  modalPrice.textContent = moneyARS(price);
-  modalMainImg.src = mainImg;
-  modalMainImg.alt = name;
+  if (modalTitle) modalTitle.textContent = name;
+  if (modalCategory) modalCategory.textContent = category;
+  if (modalPrice) modalPrice.textContent = moneyARS(price);
+  if (modalMainImg){
+    modalMainImg.src = mainImg;
+    modalMainImg.alt = name;
+  }
 
-  modalThumbs.innerHTML = "";
-  gallery.forEach((src, idx) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "thumb" + (idx === 0 ? " is-active" : "");
-    btn.innerHTML = `<img src="${src}" alt="Vista ${idx+1} de ${name}" loading="lazy">`;
-    btn.addEventListener("click", () => {
-      modalMainImg.src = src;
-      $$(".thumb", modalThumbs).forEach(t => t.classList.remove("is-active"));
-      btn.classList.add("is-active");
+  if (modalThumbs){
+    modalThumbs.innerHTML = "";
+    gallery.forEach((src, idx) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "thumb" + (idx === 0 ? " is-active" : "");
+      btn.innerHTML = `<img src="${src}" alt="Vista ${idx+1} de ${name}" loading="lazy">`;
+      btn.addEventListener("click", () => {
+        if (modalMainImg) modalMainImg.src = src;
+        $$(".thumb", modalThumbs).forEach(t => t.classList.remove("is-active"));
+        btn.classList.add("is-active");
+      });
+      modalThumbs.appendChild(btn);
     });
-    modalThumbs.appendChild(btn);
-  });
+  }
 
   productModal.classList.add("is-open");
   productModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("no-scroll");
+  syncScrollLock();
 }
 
 function closeModal(){
+  if (!productModal) return;
   productModal.classList.remove("is-open");
   productModal.setAttribute("aria-hidden", "true");
-  if (!cartDrawer?.classList.contains("is-open")) {
-  document.body.classList.remove("no-scroll");
-}
   modalCurrentProduct = null;
+  syncScrollLock();
 }
 
+/* ✅ FIX: cerrar aunque toques el SVG/path */
 if (productModal){
   productModal.addEventListener("click", (e) => {
     const closeEl = e.target.closest('[data-close="true"]');
@@ -127,9 +141,11 @@ if (modalAddBtn){
   modalAddBtn.addEventListener("click", () => {
     if (!modalCurrentProduct) return;
     addToCartFromElement(modalCurrentProduct);
+    closeModal();
     openCart();
   });
 }
+
 if (modalGoCartBtn){
   modalGoCartBtn.addEventListener("click", () => {
     closeModal();
@@ -138,7 +154,7 @@ if (modalGoCartBtn){
 }
 
 /* ============================
-   Catalog interactions
+   Catalog interactions (cards)
    ============================ */
 const catalogGrid = $("#catalogGrid");
 const featuredGrid = $("#featuredGrid");
@@ -147,17 +163,17 @@ function bindProductGrid(gridEl){
   if (!gridEl) return;
 
   gridEl.addEventListener("click", (e) => {
-    const btn = e.target.closest("button");
-    if (!btn) return;
+    const actionBtn = e.target.closest(".js-add, .js-view");
+    if (!actionBtn) return;
 
-    const productEl = btn.closest(".product");
+    const productEl = actionBtn.closest(".product");
     if (!productEl) return;
 
-    if (btn.classList.contains("js-add")){
+    if (actionBtn.classList.contains("js-add")){
       addToCartFromElement(productEl);
       return;
     }
-    if (btn.classList.contains("js-view")){
+    if (actionBtn.classList.contains("js-view")){
       openModal(productEl);
       return;
     }
@@ -174,17 +190,19 @@ const categorySelect = $("#categorySelect");
 const sortSelect = $("#sortSelect");
 
 function getAllCatalogProducts(){
-  return $$(".product", catalogGrid);
+  return catalogGrid ? $$(".product", catalogGrid) : [];
 }
 
 function applyCatalog(){
+  if (!catalogGrid) return;
+
   const q = (searchInput?.value || "").trim().toLowerCase();
   const cat = categorySelect?.value || "Todas";
   const sort = sortSelect?.value || "recomendado";
 
   const items = getAllCatalogProducts();
 
-  // filter visibility
+  // filter
   items.forEach(el => {
     const name = (el.dataset.name || "").toLowerCase();
     const category = el.dataset.category || "";
@@ -193,7 +211,7 @@ function applyCatalog(){
     el.style.display = (matchesQuery && matchesCat) ? "" : "none";
   });
 
-  // sort (only visible ones)
+  // sort (solo visibles)
   const visible = items.filter(el => el.style.display !== "none");
   const sorted = [...visible];
 
@@ -204,8 +222,7 @@ function applyCatalog(){
   } else if (sort === "nombre-asc"){
     sorted.sort((a,b) => (a.dataset.name||"").localeCompare((b.dataset.name||""), "es"));
   } else {
-    // recomendado: no tocar orden
-    return;
+    return; // recomendado
   }
 
   sorted.forEach(el => catalogGrid.appendChild(el));
@@ -349,19 +366,18 @@ function openCart(){
   if (!cartDrawer) return;
   cartDrawer.classList.add("is-open");
   cartDrawer.setAttribute("aria-hidden", "false");
-  document.body.classList.add("no-scroll");
+  syncScrollLock();
 }
 function closeCart(){
   if (!cartDrawer) return;
   cartDrawer.classList.remove("is-open");
   cartDrawer.setAttribute("aria-hidden", "true");
-  if (!productModal?.classList.contains("is-open")) {
-  document.body.classList.remove("no-scroll");
-}
+  syncScrollLock();
 }
 
 if (openCartBtn) openCartBtn.addEventListener("click", openCart);
 
+/* ✅ FIX: cerrar aunque toques el SVG/path */
 if (cartDrawer){
   cartDrawer.addEventListener("click", (e) => {
     const t = e.target;
@@ -372,16 +388,19 @@ if (cartDrawer){
       return;
     }
 
-    const removeSku = t?.dataset?.remove;
+    const removeSku = t.closest("[data-remove]")?.dataset?.remove;
     if (removeSku){
       removeFromCart(removeSku);
       return;
     }
 
-    const qtySku = t?.dataset?.qty;
-    const delta = safeNumber(t?.dataset?.delta);
-    if (qtySku && delta){
-      changeQty(qtySku, delta);
+    const qtyBtn = t.closest("[data-qty][data-delta]");
+    if (qtyBtn){
+      const qtySku = qtyBtn.dataset.qty;
+      const delta = safeNumber(qtyBtn.dataset.delta);
+      if (qtySku && delta !== 0){
+        changeQty(qtySku, delta);
+      }
       return;
     }
   });
@@ -439,7 +458,6 @@ function openWhatsAppWithMessage(message){
   const cleanNumber = (WHATSAPP_NUMBER || "").replace(/[^\d]/g, "");
   const text = encodeURIComponent(message);
 
-  // wa.me works on mobile & desktop
   const url = cleanNumber
     ? `https://wa.me/${cleanNumber}?text=${text}`
     : `https://wa.me/?text=${text}`;
@@ -449,14 +467,12 @@ function openWhatsAppWithMessage(message){
 
 if (sendWspBtn){
   sendWspBtn.addEventListener("click", () => {
-    const msg = buildOrderMessage();
-    openWhatsAppWithMessage(msg);
+    openWhatsAppWithMessage(buildOrderMessage());
   });
 }
 
 function quickWsp(){
-  const msg = "Hola! Quiero consultar por productos y disponibilidad en Luisa Pastelería.";
-  openWhatsAppWithMessage(msg);
+  openWhatsAppWithMessage("Hola! Quiero consultar por productos y disponibilidad en Luisa Pastelería.");
 }
 if (heroWspBtn) heroWspBtn.addEventListener("click", quickWsp);
 if (contactWspBtn) contactWspBtn.addEventListener("click", quickWsp);
@@ -473,9 +489,6 @@ function toast(text){
     el.style.position = "fixed";
     el.style.left = "50%";
     el.style.bottom = "18px";
-    el.style.transform = "translateX(-50%)";
-    el.style.padding = "10px 14px";
-    el.style.borderRadius = "999px";
     el.style.border = "1px solid rgba(0,0,0,.22)";
     el.style.background = "rgba(255,255,255,.92)";
     el.style.boxShadow = "0 18px 40px rgba(22,22,22,.14)";
@@ -484,8 +497,11 @@ function toast(text){
     el.style.opacity = "0";
     el.style.transition = "opacity .2s ease, transform .2s ease";
     el.style.transform = "translateX(-50%) translateY(6px)";
+    el.style.padding = "10px 14px";
+    el.style.borderRadius = "999px";
     document.body.appendChild(el);
   }
+
   el.textContent = text;
   el.style.opacity = "1";
   el.style.transform = "translateX(-50%) translateY(0)";
@@ -502,3 +518,4 @@ function toast(text){
    ============================ */
 renderCart();
 applyCatalog();
+syncScrollLock();
