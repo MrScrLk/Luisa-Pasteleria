@@ -682,8 +682,8 @@ button, input, select{ font-family:inherit; }
   width: min(980px, calc(100% - 26px));
   margin: 36px auto;
   border-radius: var(--radius2);
-  border: 1px solid rgba(255,255,255,.18);
-  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255, 250, 247, .92);
   box-shadow: var(--shadow);
   overflow:hidden;
 }
