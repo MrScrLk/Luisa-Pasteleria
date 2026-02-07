@@ -733,14 +733,27 @@ button, input, select{ font-family:inherit; }
 
 .modalTitle{ font-size: 26px; font-weight: 950; letter-spacing:-.6px; }
 .modalText{ color: var(--muted); line-height:1.7; }
-.modalMeta{ display:flex; gap: 10px; flex-wrap: wrap; }
+.modalMeta{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;  
+  align-items: center;
+  margin-top: 6px;
+}
+
+/* Chip estilo pastelería */
 .pTag{
-  padding: 8px 10px;
+  padding: 6px 10px;            
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.16);
-  background: rgba(0,0,0,.14);
+  border: 1px solid rgba(130,70,90,.18);
+  background: rgba(255,255,255,.70);
+  color: var(--text);
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 10px 22px rgba(80,30,45,.06);
 }
 
 /* Toasts */
